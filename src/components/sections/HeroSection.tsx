@@ -3,12 +3,30 @@ import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
 import { Calendar, MapPin, Users, Globe } from "lucide-react";
 
+const sponsors = [
+  {
+    name: "Cardiff Metropolitan University",
+    src: "/cardiff.png",
+    alt: "Cardiff Metropolitan University Logo",
+  },
+  {
+    name: "Manchester Metropolitan University",
+    src: "/manchester.png",
+    alt: "Manchester Metropolitan University Logo",
+  },
+  {
+    name: "Northeastern University",
+    src: "/northeatern.png",
+    alt: "Northeastern University Logo",
+  },
+];
+
 const HeroSection = () => {
   return (
     <section className="relative min-h-[80vh] flex items-center gradient-hero overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 bg-grid-white/10 bg-[size:50px_50px] [mask-image:linear-gradient(0deg,white,rgba(255,255,255,0.6))]" />
-      
+
       {/* Content */}
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20">
         <div className="text-center text-white">
@@ -50,16 +68,16 @@ const HeroSection = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button 
-              size="lg" 
+            <Button
+              size="lg"
               className="bg-accent hover:bg-accent/90 text-accent-foreground text-lg px-8 py-3 shadow-large transition-bounce"
               asChild
             >
               <Link to="/call-for-papers">Submit Your Paper</Link>
             </Button>
-            <Button 
-              size="lg" 
-              variant="outline" 
+            <Button
+              size="lg"
+              variant="outline"
               className="bg-white/10 border-white/30 text-white hover:bg-white/20 text-lg px-8 py-3 backdrop-blur-sm"
               asChild
             >
@@ -67,9 +85,22 @@ const HeroSection = () => {
             </Button>
           </div>
 
-          {/* Website URL */}
-          <div className="mt-8 text-white/80">
-            <p className="text-sm">Visit us at: <span className="font-mono">www.sngc-conf.co.uk</span></p>
+          
+        </div>
+
+        {/* Sponsors Section */}
+        <div className="mt-16">
+          <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-center text-white">Our Sponsors and Supporters</h2>
+          <div className="flex flex-wrap justify-center items-center gap-8">
+            {sponsors.map((sponsor) => (
+              <img
+                key={sponsor.name}
+                src={sponsor.src}
+                alt={sponsor.alt}
+                className="h-24 w-auto object-contain grayscale hover:grayscale-0 transition"
+                loading="lazy"
+              />
+            ))}
           </div>
         </div>
       </div>
