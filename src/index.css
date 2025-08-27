@@ -2,53 +2,57 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Professional Conference Design System - Trustworthy Light Theme
+/* Professional Conference Design System - Dark Blue Academic Theme
 All colors MUST be HSL.
 */
 
 @layer base {
   :root {
-    /* Core neutral palette for trust and professionalism */
-    --background: 0 0% 99%;
-    --foreground: 210 11% 15%;
+    /* Core neutral palette for academic professionalism */
+    --background: 0 0% 98%;
+    --foreground: 220 15% 25%;
 
     --card: 0 0% 100%;
-    --card-foreground: 210 11% 15%;
+    --card-foreground: 220 15% 25%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 210 11% 15%;
+    --popover-foreground: 220 15% 25%;
 
-    /* Professional blue primary - trustworthy and academic */
-    --primary: 213 94% 68%;
+    /* Professional dark blue primary - academic and trustworthy */
+    --primary: 220 80% 35%;
     --primary-foreground: 0 0% 100%;
-    --primary-light: 213 100% 95%;
-    --primary-dark: 213 94% 45%;
+    --primary-light: 220 100% 95%;
+    --primary-dark: 220 80% 25%;
 
-    /* Sophisticated secondary grays */
-    --secondary: 210 17% 95%;
-    --secondary-foreground: 210 11% 25%;
+    /* Sophisticated navy secondary */
+    --secondary: 220 15% 92%;
+    --secondary-foreground: 220 15% 35%;
 
-    --muted: 210 17% 96%;
-    --muted-foreground: 210 10% 45%;
+    --muted: 220 15% 95%;
+    --muted-foreground: 220 10% 55%;
 
-    /* Professional accent - complementary orange for highlights */
-    --accent: 25 95% 65%;
+    /* Professional green accent - for CTAs and highlights */
+    --accent: 142 69% 45%;
     --accent-foreground: 0 0% 100%;
-    --accent-light: 25 100% 95%;
+    --accent-light: 142 60% 95%;
+
+    /* Sand/beige for info sections */
+    --sand: 45 25% 88%;
+    --sand-foreground: 220 15% 25%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 210 20% 90%;
-    --input: 210 20% 94%;
-    --ring: 213 94% 68%;
+    --border: 220 20% 88%;
+    --input: 220 20% 92%;
+    --ring: 220 80% 35%;
 
     --radius: 0.5rem;
 
-    /* Conference-specific design tokens - ICCCNET style with better contrast */
-    --gradient-hero: linear-gradient(135deg, hsl(213 94% 68%), hsl(39 96% 64%));
+    /* Conference-specific design tokens - Academic style */
+    --gradient-hero: linear-gradient(135deg, hsl(220 80% 35%), hsl(220 70% 45%));
     --gradient-subtle: linear-gradient(180deg, hsl(var(--card)) 0%, hsl(var(--secondary)) 100%);
-    --gradient-accent: linear-gradient(45deg, hsl(39 96% 64%), hsl(45 93% 58%));
+    --gradient-accent: linear-gradient(45deg, hsl(142 69% 45%), hsl(142 69% 55%));
 
     /* Shadows for depth and professionalism */
     --shadow-soft: 0 4px 6px -1px hsl(210 20% 85% / 0.1), 0 2px 4px -1px hsl(210 20% 85% / 0.06);

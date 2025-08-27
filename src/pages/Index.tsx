@@ -1,19 +1,27 @@
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import HeroSection from "@/components/sections/HeroSection";
-import ConferenceOverview from "@/components/sections/ConferenceOverview";
+import ImageCarousel from "@/components/sections/ImageCarousel";
+import ScrollingMarquee from "@/components/sections/ScrollingMarquee";
+import ConferenceInfoCard from "@/components/sections/ConferenceInfoCard";
+import AboutSection from "@/components/sections/AboutSection";
+import CTASection from "@/components/sections/CTASection";
 import ImportantDates from "@/components/sections/ImportantDates";
-import Organizers from "@/components/sections/Organizers";
 
 const Index = () => {
   return (
     <div className="min-h-screen">
       <Header />
+      <ScrollingMarquee />
       <main>
         <HeroSection />
-        <ConferenceOverview />
+        <div className="py-12">
+          <ImageCarousel />
+        </div>
+        <ConferenceInfoCard />
+        <AboutSection />
+        <CTASection />
         <ImportantDates />
-        <Organizers />
       </main>
       <Footer />
     </div>
