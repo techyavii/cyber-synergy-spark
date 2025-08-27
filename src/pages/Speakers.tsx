@@ -2,7 +2,7 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { ExternalLink, Award, University, Globe } from "lucide-react";
+import { ExternalLink, Award, University, Globe, Users } from "lucide-react";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 
@@ -134,7 +134,7 @@ const Speakers = () => {
               Keynote & Invited Speakers
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              World-leading experts sharing cutting-edge research and industry insights in cyber-physical systems
+              We are currently finalizing our lineup of world-leading experts who will share cutting-edge research and industry insights in cyber-physical systems
             </p>
           </div>
 
@@ -143,77 +143,20 @@ const Speakers = () => {
             <h2 className="text-3xl font-bold text-center mb-12">
               Keynote Speakers
             </h2>
-            <div className="grid lg:grid-cols-2 gap-8">
-              {keynoteSpeakers.map((speaker, index) => (
-                <Card key={index} className="border-0 shadow-soft hover:shadow-medium transition-smooth">
-                  <CardHeader>
-                    <div className="flex items-start space-x-4">
-                      <Avatar className="w-20 h-20">
-                        <AvatarImage src={`/speakers/${speaker.name.replace(/\s+/g, '-').toLowerCase()}.jpg`} />
-                        <AvatarFallback className="gradient-hero text-white text-lg font-bold">
-                          {getInitials(speaker.name)}
-                        </AvatarFallback>
-                      </Avatar>
-                      <div className="flex-1">
-                        <CardTitle className="text-xl mb-2">{speaker.name}</CardTitle>
-                        <div className="space-y-1 text-sm text-muted-foreground">
-                          <p className="flex items-center space-x-1">
-                            <University className="w-4 h-4" />
-                            <span>{speaker.affiliation}</span>
-                          </p>
-                          <p className="flex items-center space-x-1">
-                            <Globe className="w-4 h-4" />
-                            <span>{speaker.country}</span>
-                          </p>
-                          <Badge variant="outline" className="w-fit">
-                            {speaker.title}
-                          </Badge>
-                        </div>
-                      </div>
+            <div className="text-center">
+              <Card className="border-0 shadow-soft max-w-2xl mx-auto">
+                <CardContent className="p-12">
+                  <div className="space-y-6">
+                    <div className="w-24 h-24 bg-muted rounded-full flex items-center justify-center mx-auto">
+                      <Users className="w-12 h-12 text-muted-foreground" />
                     </div>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="space-y-4">
-                      <div>
-                        <h4 className="font-semibold text-primary mb-2">Keynote Title:</h4>
-                        <p className="text-sm font-medium">{speaker.keynoteTitle}</p>
-                      </div>
-                      
-                      <div>
-                        <h4 className="font-semibold mb-2">Biography:</h4>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
-                          {speaker.bio}
-                        </p>
-                      </div>
-
-                      <div>
-                        <h4 className="font-semibold mb-2 flex items-center space-x-1">
-                          <Award className="w-4 h-4" />
-                          <span>Credentials:</span>
-                        </h4>
-                        <div className="flex flex-wrap gap-1">
-                          {speaker.credentials.map((credential, idx) => (
-                            <Badge key={idx} variant="secondary" className="text-xs">
-                              {credential}
-                            </Badge>
-                          ))}
-                        </div>
-                      </div>
-
-                      <div>
-                        <h4 className="font-semibold mb-2">Research Areas:</h4>
-                        <div className="flex flex-wrap gap-1">
-                          {speaker.researchAreas.map((area, idx) => (
-                            <Badge key={idx} variant="outline" className="text-xs">
-                              {area}
-                            </Badge>
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
+                    <h3 className="text-2xl font-bold">Coming Soon</h3>
+                    <p className="text-muted-foreground">
+                      We are in the process of confirming distinguished keynote speakers from leading universities and research institutions worldwide. Details will be announced soon.
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
             </div>
           </div>
 
@@ -222,37 +165,20 @@ const Speakers = () => {
             <h2 className="text-3xl font-bold text-center mb-12">
               Invited Speakers
             </h2>
-            <div className="grid md:grid-cols-3 gap-6">
-              {invitedSpeakers.map((speaker, index) => (
-                <Card key={index} className="border-0 shadow-soft text-center hover:shadow-medium transition-smooth">
-                  <CardHeader>
-                    <Avatar className="w-24 h-24 mx-auto mb-4">
-                      <AvatarImage src={`/speakers/${speaker.name.replace(/\s+/g, '-').toLowerCase()}.jpg`} />
-                      <AvatarFallback className="gradient-hero text-white text-xl font-bold">
-                        {getInitials(speaker.name)}
-                      </AvatarFallback>
-                    </Avatar>
-                    <CardTitle className="text-lg">{speaker.name}</CardTitle>
-                    <div className="space-y-2">
-                      <p className="text-sm text-muted-foreground">{speaker.affiliation}</p>
-                      <p className="text-sm text-muted-foreground">{speaker.country}</p>
-                      <Badge variant="outline" className="mx-auto w-fit">
-                        {speaker.title}
-                      </Badge>
+            <div className="text-center">
+              <Card className="border-0 shadow-soft max-w-2xl mx-auto">
+                <CardContent className="p-12">
+                  <div className="space-y-6">
+                    <div className="w-24 h-24 bg-muted rounded-full flex items-center justify-center mx-auto">
+                      <Users className="w-12 h-12 text-muted-foreground" />
                     </div>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="space-y-3">
-                      <div>
-                        <h4 className="font-semibold text-sm mb-1">Talk Topic:</h4>
-                        <p className="text-sm text-muted-foreground">
-                          {speaker.topic}
-                        </p>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
+                    <h3 className="text-2xl font-bold">Coming Soon</h3>
+                    <p className="text-muted-foreground">
+                      Additional invited speakers from industry and academia will be announced as confirmations are received.
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
             </div>
           </div>
 

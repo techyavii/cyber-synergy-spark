@@ -45,10 +45,10 @@ All colors MUST be HSL.
 
     --radius: 0.5rem;
 
-    /* Conference-specific design tokens */
-    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary-dark)) 100%);
+    /* Conference-specific design tokens - ICCCNET style with better contrast */
+    --gradient-hero: linear-gradient(135deg, hsl(213 94% 68%), hsl(39 96% 64%));
     --gradient-subtle: linear-gradient(180deg, hsl(var(--card)) 0%, hsl(var(--secondary)) 100%);
-    --gradient-accent: linear-gradient(135deg, hsl(var(--accent)) 0%, hsl(25 90% 55%) 100%);
+    --gradient-accent: linear-gradient(45deg, hsl(39 96% 64%), hsl(45 93% 58%));
 
     /* Shadows for depth and professionalism */
     --shadow-soft: 0 4px 6px -1px hsl(210 20% 85% / 0.1), 0 2px 4px -1px hsl(210 20% 85% / 0.06);

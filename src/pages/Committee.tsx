@@ -257,35 +257,21 @@ const Committee = () => {
               <Users className="w-6 h-6 text-primary" />
               <span>Technical Programme Committee</span>
             </h2>
-            <Card className="border-0 shadow-soft">
-              <CardHeader>
-                <CardTitle className="text-center">
-                  Expert Reviewers & Technical Advisors
-                </CardTitle>
-                <p className="text-center text-muted-foreground">
-                  Our technical programme committee consists of 30+ leading researchers from around the world
-                </p>
-              </CardHeader>
-              <CardContent>
-                <div className="grid md:grid-cols-2 gap-4">
-                  {technicalCommittee.map((member, index) => (
-                    <div key={index} className="flex items-center space-x-3 p-3 rounded-lg hover:bg-muted/20 transition-smooth">
-                      <Avatar className="w-10 h-10">
-                        <AvatarFallback className="bg-secondary text-secondary-foreground text-sm">
-                          {getInitials(member.name)}
-                        </AvatarFallback>
-                      </Avatar>
-                      <div className="flex-1 min-w-0">
-                        <p className="font-medium text-sm">{member.name}</p>
-                        <p className="text-xs text-muted-foreground truncate">
-                          {member.affiliation}
-                        </p>
-                      </div>
+            <div className="text-center">
+              <Card className="border-0 shadow-soft max-w-2xl mx-auto">
+                <CardContent className="p-12">
+                  <div className="space-y-6">
+                    <div className="w-24 h-24 bg-muted rounded-full flex items-center justify-center mx-auto">
+                      <Users className="w-12 h-12 text-muted-foreground" />
                     </div>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
+                    <h3 className="text-2xl font-bold">To Be Confirmed</h3>
+                    <p className="text-muted-foreground">
+                      We are currently inviting distinguished researchers and industry experts to join our Technical Programme Committee. The complete list will be published once confirmations are received.
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
           </div>
 
           {/* Contact Information */}

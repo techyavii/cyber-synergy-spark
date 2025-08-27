@@ -237,61 +237,28 @@ const Program = () => {
           </div>
 
           {/* Schedule */}
-          <div className="space-y-12">
-            {scheduleData.map((day, dayIndex) => (
-              <Card key={dayIndex} className="border-0 shadow-soft">
-                <CardHeader className="gradient-hero text-white">
-                  <CardTitle className="text-2xl text-center">
-                    {day.day}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="p-0">
-                  <div className="space-y-0">
-                    {day.sessions.map((session, sessionIndex) => (
-                      <div
-                        key={sessionIndex}
-                        className={`p-6 border-l-4 border-b last:border-b-0 transition-smooth hover:bg-muted/10 ${getSessionColor(session.type)}`}
-                      >
-                        <div className="flex items-start space-x-4">
-                          <div className="flex-shrink-0">
-                            {getSessionIcon(session.type)}
-                          </div>
-                          <div className="flex-1 min-w-0">
-                            <div className="flex items-center justify-between mb-2">
-                              <Badge variant="outline" className="text-xs">
-                                {session.time}
-                              </Badge>
-                              <Badge variant="secondary" className="text-xs">
-                                {session.location}
-                              </Badge>
-                            </div>
-                            <h3 className="text-lg font-semibold text-foreground mb-1">
-                              {session.title}
-                            </h3>
-                            {session.speaker && (
-                              <p className="text-sm text-muted-foreground mb-1">
-                                <strong>Speaker:</strong> {session.speaker}
-                                {session.affiliation && `, ${session.affiliation}`}
-                              </p>
-                            )}
-                            {session.topic && (
-                              <p className="text-sm text-muted-foreground mb-2">
-                                <strong>Topic:</strong> {session.topic}
-                              </p>
-                            )}
-                            {session.papers && (
-                              <p className="text-sm text-muted-foreground">
-                                <strong>Papers:</strong> {session.papers} presentations
-                              </p>
-                            )}
-                          </div>
-                        </div>
-                      </div>
-                    ))}
+          <div className="text-center mb-16">
+            <Card className="border-0 shadow-soft max-w-3xl mx-auto">
+              <CardContent className="p-16">
+                <div className="space-y-8">
+                  <div className="w-32 h-32 bg-muted rounded-full flex items-center justify-center mx-auto">
+                    <Calendar className="w-16 h-16 text-muted-foreground" />
                   </div>
-                </CardContent>
-              </Card>
-            ))}
+                  <div>
+                    <h3 className="text-3xl font-bold mb-4">Program Coming Soon</h3>
+                    <p className="text-xl text-muted-foreground mb-6">
+                      We are currently finalizing the conference program with exciting keynotes, technical sessions, and networking opportunities.
+                    </p>
+                    <p className="text-lg text-muted-foreground">
+                      The detailed schedule will be published once all speakers and sessions are confirmed. Check back regularly for updates!
+                    </p>
+                  </div>
+                  <Badge variant="secondary" className="text-base px-6 py-2">
+                    Expected Publication: Early 2026
+                  </Badge>
+                </div>
+              </CardContent>
+            </Card>
           </div>
 
           {/* Additional Information */}
