@@ -15,6 +15,8 @@ import Venue from "./pages/Venue";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import ConferenceBanner from "./components/common components/ConferenceBanner";
+import Publications from "./pages/Publication";
+import PrivacyPolicy from "./pages/Policy";
 
 const queryClient = new QueryClient();
 
@@ -37,6 +39,9 @@ const App = () => (
           <Route path="/registration" element={<Registration />} />
           <Route path="/venue" element={<Venue />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/publication" element={<Publications />} />
+          <Route path="/policy" element={<PrivacyPolicy />} />
+
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

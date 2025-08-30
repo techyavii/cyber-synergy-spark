@@ -14,6 +14,7 @@ import {
   Download,
   Send
 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const CallForPapers = () => {
   const tracks = [
@@ -34,17 +35,17 @@ const CallForPapers = () => {
     {
       type: "Original Research Papers",
       description: "Novel research contributions with experimental validation",
-      length: "4 pages"
+      length: "6 pages"
     },
     {
       type: "Case Studies", 
       description: "Real-world applications and implementation experiences",
-      length: "4 pages"
+      length: "6 pages"
     },
     {
       type: "Survey Papers",
       description: "Comprehensive reviews of specific CPS domains", 
-      length: "4 pages"
+      length: "6 pages"
     }
   ];
 
@@ -68,6 +69,8 @@ const CallForPapers = () => {
     <div className="min-h-screen">
       <Header />
       <main>
+
+        
         {/* Hero Section */}
         <section className="relative py-20 gradient-hero">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -96,8 +99,59 @@ const CallForPapers = () => {
           </div>
         </section>
 
+        <div className="min-h-screen flex flex-col">
+      <div className="container mx-auto px-4 py-12 flex-grow">
+        <div className="max-w-4xl mx-auto bg-white p-8 rounded-lg shadow-lg">
+          <h1 className=" text-3xl md:text-4xl text-[#001324] mb-8">Paper Submission</h1>
+          
+          <p className="text-lg mb-6">
+            The Original unpublished Research Papers, Articles & Working papers having maximum length 10-12 pages on the topics related to the theme are invited for presentation/publication in the conference proceedings.
+          </p>
+          
+          <ol className="list-decimal pl-6 space-y-4">
+            <li className="">
+              Kindly ensure that your paper is formatted as per  IEEE Guidelines (not exceeding 10-12 pages written in A4 size). Please refer the attached springer template for preparation of your paper.
+            </li>
+            <li className="">
+              {/* https://cmt3.research.microsoft.com/DASGRI2026 */}
+              All papers must be submitted online via <Link to={""} className='text-blue-700 underline'>Microsoft CMT Submission Portal</Link>.
+            </li>
+            <li className="">
+              All submissions will be thoroughly peer-reviewed by experts based on originality, significance, and clarity.
+            </li>
+            <li className="">
+              Only papers presenting original content with novel research results or successful innovative applications will be considered for publication in the conference proceedings.
+            </li>
+          </ol>
+          <br/><br/>
+          {/* <p className="">
+            <b>Note: </b>The Microsoft CMT service was used for managing the peer-reviewing process for this conference.
+            This service was provided for free by Microsoft and they bore all expenses, including costs for Azure cloud services as well as for software development and support.
+          </p> */}
+          <h2 className=" text-2xl text-[#001324] mt-10 mb-4">Plagiarism Policy</h2>
+          <ol className="list-decimal pl-6 space-y-4">
+            <li className="">
+              The paper prior to submission should be checked for plagiarism from licensed plagiarism software like Turnitin / iAuthenticate etc. The similarity content should not exceed 15% (in any case either self contents or others). Further, you have to strictly implement the following ethical guidelines for publication:
+            </li>
+            <li className="">
+              Any form of self-plagiarism or plagiarism from others' work(s) should not be there in an article.
+            </li>
+            <li className="">
+              If any model / concept / figure / table / data / conclusive comment by any previously published work is used in your article, you should properly cite a reference to the original work.
+            </li>
+            <li className="">
+              Also language of explaining it should not be same as language of the work from which you have adopted it.
+            </li>
+            <li className="">
+              If you are using any copyrighted material, you should acquire prior permission from the copyright holder.
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+
         {/* Important Alert */}
-        <section className="py-8 bg-background">
+        {/* <section className="py-8 bg-background">
           <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
             <Alert className="border-accent bg-accent-light">
               <AlertCircle className="h-4 w-4" />
@@ -107,7 +161,7 @@ const CallForPapers = () => {
               </AlertDescription>
             </Alert>
           </div>
-        </section>
+        </section> */}
 
         {/* Conference Tracks */}
         <section className="py-16 bg-background">

@@ -23,7 +23,7 @@ const Index = () => {
 
         <AboutSection />
         <ImportantDates />
-        <CTASection />
+        {/* <CTASection /> */}
       </main>
       <Footer />
     </div>
