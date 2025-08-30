@@ -10,14 +10,19 @@ const Header = () => {
   const navigation = [
     { name: "Home", href: "/" },
     { name: "About", href: "/about" },
-    { name: "Tracks", href: "/tracks" },
+    // { name: "Tracks", href: "/tracks" },
     { name: "Call for Papers", href: "/call-for-papers" },
-    { name: "Program", href: "/program" },
-    { name: "Speakers", href: "/speakers" },
-    { name: "Committee", href: "/committee" },
     { name: "Registration", href: "/registration" },
+    { name: "Publication", href: "/publication" },
+
+    // { name: "Program", href: "/program" },
+    { name: "Committee", href: "/committee" },
+    // { name: "Speakers", href: "/speakers" },
     { name: "Venue", href: "/venue" },
-    { name: "Contact", href: "/contact" },
+    { name: "Downloads", href: "/downloads" },
+    { name: "Policy", href: "/policy" },
+
+    // { name: "Contact", href: "/contact" },
   ];
 
   const isActive = (path: string) => location.pathname === path;

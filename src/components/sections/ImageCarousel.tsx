@@ -11,17 +11,22 @@ import Autoplay from "embla-carousel-autoplay";
 
 const carouselImages = [
   {
-    src: "/cardiff.png",
+    src: "/CrousalImages/1.avif",
     alt: "Cardiff Metropolitan University",
     title: "Conference Venue"
   },
   {
-    src: "/ieee-logo.png", 
+    src: "/CrousalImages/2.jpg", 
     alt: "IEEE Organization",
     title: "IEEE Sponsored"
   },
   {
-    src: "/ieee-cis-logo.png",
+    src: "/CrousalImages/3.jpg",
+    alt: "IEEE CIS",
+    title: "Technical Co-Sponsor"
+  },
+  {
+    src: "/CrousalImages/4.jpg",
     alt: "IEEE CIS",
     title: "Technical Co-Sponsor"
   }
@@ -65,11 +70,8 @@ export default function ImageCarousel() {
                     <img 
                       src={image.src} 
                       alt={image.alt}
-                      className="h-32 w-auto mx-auto mb-4 object-contain"
+                      // className="h-32 w-auto mx-auto mb-4 object-contain"
                     />
-                    <h3 className="text-xl font-semibold text-foreground">
-                      {image.title}
-                    </h3>
                   </div>
                 </div>
               </div>

@@ -12,16 +12,18 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       <Header />
-      <ScrollingMarquee />
       <main>
-        <HeroSection />
+        {/* <HeroSection /> */}
         <div className="py-12">
           <ImageCarousel />
         </div>
         <ConferenceInfoCard />
+
+      <ScrollingMarquee />
+
         <AboutSection />
-        <CTASection />
         <ImportantDates />
+        <CTASection />
       </main>
       <Footer />
     </div>

@@ -14,6 +14,7 @@ import Registration from "./pages/Registration";
 import Venue from "./pages/Venue";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
+import ConferenceBanner from "./components/common components/ConferenceBanner";
 
 const queryClient = new QueryClient();
 
@@ -23,6 +24,8 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <div className="flex flex-col min-h-screen">
+          <ConferenceBanner />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/about" element={<About />} />
@@ -37,6 +40,7 @@ const App = () => (
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
+        </div>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
