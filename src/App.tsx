@@ -17,6 +17,7 @@ import NotFound from "./pages/NotFound";
 import ConferenceBanner from "./components/common components/ConferenceBanner";
 import Publications from "./pages/Publication";
 import PrivacyPolicy from "./pages/Policy";
+import Downloads from "./pages/Download";
 
 const queryClient = new QueryClient();
 
@@ -41,6 +42,8 @@ const App = () => (
           <Route path="/contact" element={<Contact />} />
           <Route path="/publication" element={<Publications />} />
           <Route path="/policy" element={<PrivacyPolicy />} />
+          <Route path="/downloads" element={<Downloads />} />
+
 
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
