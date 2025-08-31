@@ -60,57 +60,68 @@ const ImportantDates = () => {
   };
 
   return (
-    <section className="py-20 bg-background">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section className="py-20 relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-br from-background via-accent/5 to-background"></div>
+      <div className="absolute top-20 left-20 w-40 h-40 bg-primary/5 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-20 right-20 w-32 h-32 bg-accent/5 rounded-full blur-3xl"></div>
+      
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <Badge variant="secondary" className="mb-4">
+          <Badge variant="secondary" className="mb-6 px-6 py-2 text-base font-semibold">
             Important Dates
           </Badge>
-          <h2 className="text-4xl font-bold text-foreground mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-primary bg-clip-text text-transparent">
             Key Conference Timeline
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <div className="w-24 h-1 bg-gradient-primary mx-auto rounded-full mb-6"></div>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             Mark your calendar with these important deadlines and dates for SNGC 2026
           </p>
         </div>
 
         {/* Dates Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {dates.map((item, index) => (
-            <Card key={index} className="border-0 shadow-soft hover:shadow-medium transition-smooth">
-              <CardHeader className="pb-3">
-                <div className="flex items-center justify-between mb-2">
-                  <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
-                    <item.icon className="w-5 h-5 text-primary" />
+            <Card key={index} className="border-border/50 shadow-elegant hover:shadow-glow transition-all duration-500 group hover:scale-105 bg-card/90 backdrop-blur-sm">
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-primary"></div>
+              <CardHeader className="pb-4">
+                <div className="flex items-center justify-between mb-4">
+                  <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center group-hover:bg-primary/20 transition-colors duration-300">
+                    <item.icon className="w-7 h-7 text-primary group-hover:scale-110 transition-transform duration-300" />
                   </div>
-                  <Badge className={getStatusColor(item.status)}>
+                  <Badge className={`${getStatusColor(item.status)} px-3 py-1 font-semibold`}>
                     {item.status === "critical" ? "Critical" : "Upcoming"}
                   </Badge>
                 </div>
-                <CardTitle className="text-lg">{item.title}</CardTitle>
+                <CardTitle className="text-xl font-bold group-hover:text-primary transition-colors duration-300">{item.title}</CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="flex items-center space-x-2 mb-3">
-                  <Calendar className="w-4 h-4 text-primary" />
-                  <span className="font-semibold text-primary">{item.date}</span>
+                <div className="flex items-center space-x-3 mb-4">
+                  <Calendar className="w-5 h-5 text-primary" />
+                  <span className="font-bold text-primary text-lg">{item.date}</span>
                 </div>
-                <p className="text-muted-foreground text-sm">{item.description}</p>
+                <p className="text-muted-foreground leading-relaxed">{item.description}</p>
               </CardContent>
             </Card>
           ))}
         </div>
 
         {/* Conference Dates Highlight */}
-        <div className="bg-gradient-to-r from-primary to-primary-dark rounded-2xl p-8 text-white text-center shadow-large">
-          <div className="flex items-center justify-center space-x-2 mb-4">
-            <Calendar className="w-8 h-8" />
-            <h3 className="text-3xl font-bold">Conference Dates</h3>
+        <div className="relative bg-gradient-primary rounded-3xl p-10 md:p-12 text-white text-center shadow-glow overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent animate-pulse"></div>
+          <div className="relative z-10">
+            <div className="flex items-center justify-center space-x-3 mb-6">
+              <div className="p-3 bg-white/20 rounded-full">
+                <Calendar className="w-10 h-10" />
+              </div>
+              <h3 className="text-3xl md:text-4xl font-bold">Conference Dates</h3>
+            </div>
+            <p className="text-3xl md:text-4xl font-bold mb-4 drop-shadow-lg">September 16-18, 2026</p>
+            <p className="text-white/90 text-xl">
+              Cardiff Metropolitan University, Cardiff, UK (Hybrid Event)
+            </p>
           </div>
-          <p className="text-2xl mb-2">September 16-18, 2026</p>
-          <p className="text-white/80 text-lg">
-            Cardiff Metropolitan University, Cardiff, UK (Hybrid Event)
-          </p>
         </div>
       </div>
     </section>

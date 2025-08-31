@@ -47,48 +47,57 @@ export default function ImageCarousel() {
   }, [api]);
 
   return (
-    <div className="w-full max-w-4xl mx-auto">
-      <Carousel
-        setApi={setApi}
-        className="w-full"
-        plugins={[
-          Autoplay({
-            delay: 4000,
-          }),
-        ]}
-        opts={{
-          align: "start",
-          loop: true,
-        }}
-      >
-        <CarouselContent>
-          {carouselImages.map((image, index) => (
-            <CarouselItem key={index}>
-              <div className="relative h-64 md:h-80 bg-gradient-to-r from-primary/10 to-primary/5 rounded-lg overflow-hidden">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center">
-                    <img 
-                      src={image.src} 
-                      alt={image.alt}
-                      // className="h-32 w-auto mx-auto mb-4 object-contain"
-                    />
+    <div className="w-full max-w-6xl mx-auto px-4">
+      <div className="relative overflow-hidden rounded-2xl shadow-elegant">
+        <Carousel
+          setApi={setApi}
+          className="w-full"
+          plugins={[
+            Autoplay({
+              delay: 5000,
+            }),
+          ]}
+          opts={{
+            align: "center",
+            loop: true,
+          }}
+        >
+          <CarouselContent className="-ml-4">
+            {carouselImages.map((image, index) => (
+              <CarouselItem key={index} className="pl-4">
+                <div className="relative h-72 md:h-96 bg-gradient-elegant rounded-xl overflow-hidden shadow-soft group">
+                  <div className="absolute inset-0 bg-gradient-to-t from-primary/20 via-transparent to-transparent"></div>
+                  <div className="absolute inset-0 flex items-center justify-center p-8">
+                    <div className="text-center transform group-hover:scale-105 transition-transform duration-500">
+                      <img 
+                        src={image.src} 
+                        alt={image.alt}
+                        className="w-full h-full object-cover rounded-lg shadow-medium"
+                      />
+                      <div className="absolute bottom-4 left-4 right-4 bg-card/95 backdrop-blur-sm rounded-lg p-3">
+                        <h3 className="font-semibold text-foreground text-lg">{image.title}</h3>
+                        <p className="text-muted-foreground text-sm">{image.alt}</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </CarouselItem>
-          ))}
-        </CarouselContent>
-        <CarouselPrevious />
-        <CarouselNext />
-      </Carousel>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious className="left-4 bg-card/90 backdrop-blur-sm border-border/50 hover:bg-accent" />
+          <CarouselNext className="right-4 bg-card/90 backdrop-blur-sm border-border/50 hover:bg-accent" />
+        </Carousel>
+      </div>
       
-      {/* Dots indicator */}
-      <div className="flex justify-center mt-4 space-x-2">
+      {/* Enhanced dots indicator */}
+      <div className="flex justify-center mt-6 space-x-3">
         {carouselImages.map((_, index) => (
           <button
             key={index}
-            className={`w-2 h-2 rounded-full transition-colors ${
-              index === current ? 'bg-primary' : 'bg-muted'
+            className={`h-3 rounded-full transition-all duration-300 hover:scale-110 ${
+              index === current 
+                ? 'w-8 bg-primary shadow-glow' 
+                : 'w-3 bg-muted hover:bg-muted-foreground/50'
             }`}
             onClick={() => api?.scrollTo(index)}
           />
