@@ -13,7 +13,7 @@ export default function AboutSection() {
         <Card className="bg-card/90 backdrop-blur-lg border-border/50 shadow-elegant hover:shadow-glow transition-all duration-700 group">
           <CardContent className="p-10 md:p-16 text-center">
             <div className="mb-8">
-              <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-primary bg-clip-text text-transparent group-hover:scale-105 transition-transform duration-500">
+              <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-primary bg-clip-text group-hover:scale-105 transition-transform duration-500">
                 About SNGC-2026
               </h2>
               <div className="w-24 h-1 bg-gradient-primary mx-auto rounded-full"></div>

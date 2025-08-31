@@ -12,7 +12,7 @@ export default function ConferenceInfoCard() {
               <div className="p-3 bg-primary/10 rounded-full mr-4 group-hover:bg-primary/20 transition-colors duration-300">
                 <Globe className="h-10 w-10 text-primary group-hover:scale-110 transition-transform duration-300" />
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold bg-gradient-primary bg-clip-text text-transparent">
+              <h2 className="text-3xl md:text-4xl font-bold bg-gradient-primary text-black">
                 SNGC-2026 will be organised in Hybrid Mode
               </h2>
             </div>

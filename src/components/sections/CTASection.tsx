@@ -12,7 +12,7 @@ export default function CTASection() {
       
       <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="mb-10">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white drop-shadow-lg">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6  drop-shadow-lg">
             Submit Your Research Paper
           </h2>
           <div className="w-32 h-1 bg-white/80 mx-auto rounded-full mb-8"></div>

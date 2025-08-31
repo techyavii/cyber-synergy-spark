@@ -71,7 +71,7 @@ const ImportantDates = () => {
           <Badge variant="secondary" className="mb-6 px-6 py-2 text-base font-semibold">
             Important Dates
           </Badge>
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-primary bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-primary bg-clip-text">
             Key Conference Timeline
           </h2>
           <div className="w-24 h-1 bg-gradient-primary mx-auto rounded-full mb-6"></div>
@@ -108,20 +108,15 @@ const ImportantDates = () => {
         </div>
 
         {/* Conference Dates Highlight */}
-        <div className="relative bg-gradient-primary rounded-3xl p-10 md:p-12 text-white text-center shadow-glow overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent animate-pulse"></div>
-          <div className="relative z-10">
-            <div className="flex items-center justify-center space-x-3 mb-6">
-              <div className="p-3 bg-white/20 rounded-full">
-                <Calendar className="w-10 h-10" />
-              </div>
-              <h3 className="text-3xl md:text-4xl font-bold">Conference Dates</h3>
+        <div className="bg-gradient-to-r from-primary to-primary-dark rounded-2xl p-8 text-white text-center shadow-large">
+          <div className="flex items-center justify-center space-x-2 mb-4">
+            <Calendar className="w-8 h-8" />
+            <h3 className="text-3xl font-bold">Conference Dates</h3>
             </div>
-            <p className="text-3xl md:text-4xl font-bold mb-4 drop-shadow-lg">September 16-18, 2026</p>
-            <p className="text-white/90 text-xl">
-              Cardiff Metropolitan University, Cardiff, UK (Hybrid Event)
-            </p>
-          </div>
+          <p className="text-2xl mb-2">September 16-18, 2026</p>
+          <p className="text-white/80 text-lg">
+            Cardiff Metropolitan University, Cardiff, UK (Hybrid Event)
+          </p>
         </div>
       </div>
     </section>
