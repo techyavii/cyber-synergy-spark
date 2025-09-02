@@ -1,8 +1,7 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -11,19 +10,19 @@ const Header = () => {
   const navigation = [
     { name: "Home", href: "/" },
     { name: "About", href: "/about" },
+    // { name: "Tracks", href: "/tracks" },
+    { name: "Call for Papers", href: "/call-for-papers" },
     { name: "Registration", href: "/registration" },
     { name: "Publication", href: "/publication" },
+
+    // { name: "Program", href: "/program" },
     { name: "Committee", href: "/committee" },
+    // { name: "Speakers", href: "/speakers" },
     { name: "Venue", href: "/venue" },
     { name: "Downloads", href: "/downloads" },
     { name: "Policy", href: "/policy" },
-  ];
 
-  const callForPapersItems = [
-    { name: "Paper Submission", href: "/call-for-papers#submission" },
-    { name: "Conference Tracks", href: "/call-for-papers#tracks" },
-    { name: "Guidelines", href: "/call-for-papers#guidelines" },
-    { name: "Important Dates", href: "/call-for-papers#dates" },
+    // { name: "Contact", href: "/contact" },
   ];
 
   const isActive = (path: string) => location.pathname === path;
@@ -46,7 +45,7 @@ const Header = () => {
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex lg:items-center lg:space-x-1">
+          <div className="hidden lg:flex lg:space-x-1">
             {navigation.map((item) => (
               <Link
                 key={item.name}
@@ -60,32 +59,6 @@ const Header = () => {
                 {item.name}
               </Link>
             ))}
-            
-            {/* Call for Papers Dropdown */}
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <Button 
-                  variant="ghost" 
-                  className={`px-3 py-2 text-sm font-medium transition-smooth ${
-                    location.pathname === "/call-for-papers"
-                      ? "bg-primary text-primary-foreground"
-                      : "text-foreground hover:bg-secondary hover:text-secondary-foreground"
-                  }`}
-                >
-                  Call for Papers
-                  <ChevronDown className="ml-1 h-3 w-3" />
-                </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent align="end" className="w-56">
-                {callForPapersItems.map((item) => (
-                  <DropdownMenuItem key={item.name} asChild>
-                    <Link to={item.href} className="w-full">
-                      {item.name}
-                    </Link>
-                  </DropdownMenuItem>
-                ))}
-              </DropdownMenuContent>
-            </DropdownMenu>
           </div>
 
           {/* CTA Buttons */}
@@ -129,21 +102,6 @@ const Header = () => {
                   {item.name}
                 </Link>
               ))}
-              
-              {/* Mobile Call for Papers Section */}
-              <div className="pt-2">
-                <p className="px-3 py-1 text-sm font-semibold text-muted-foreground">Call for Papers</p>
-                {callForPapersItems.map((item) => (
-                  <Link
-                    key={item.name}
-                    to={item.href}
-                    className="block px-6 py-2 rounded-md text-sm font-medium text-foreground hover:bg-secondary"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    {item.name}
-                  </Link>
-                ))}
-              </div>
               <div className="pt-4 space-y-2">
                 <Button variant="outline" className="w-full" asChild>
                   <Link to="/registration">Register</Link>
