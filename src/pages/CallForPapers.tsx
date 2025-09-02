@@ -18,6 +18,12 @@ import {
 import { Link } from "react-router-dom";
 
 const CallForPapers = () => {
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
   const tracks = [
     "Integrated Sensing Technologies for Smart Environments",
     "Real-Time Control Strategies in CPS", 
@@ -105,13 +111,13 @@ const CallForPapers = () => {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <Tabs defaultValue="submission" className="w-full">
               <TabsList className="grid w-full grid-cols-4 mb-8">
-                <TabsTrigger value="submission">Paper Submission</TabsTrigger>
-                <TabsTrigger value="tracks">Conference Tracks</TabsTrigger>
-                <TabsTrigger value="guidelines">Guidelines</TabsTrigger>
-                <TabsTrigger value="dates">Important Dates</TabsTrigger>
+                <TabsTrigger value="submission" onClick={() => scrollToSection('submission')}>Paper Submission</TabsTrigger>
+                <TabsTrigger value="tracks" onClick={() => scrollToSection('tracks')}>Conference Tracks</TabsTrigger>
+                <TabsTrigger value="guidelines" onClick={() => scrollToSection('guidelines')}>Guidelines</TabsTrigger>
+                <TabsTrigger value="dates" onClick={() => scrollToSection('dates')}>Important Dates</TabsTrigger>
               </TabsList>
 
-              <TabsContent value="submission" className="space-y-8">
+              <TabsContent value="submission" id="submission" className="space-y-8">
                 <div className="max-w-4xl mx-auto bg-white p-8 rounded-lg shadow-lg">
                   <h2 className="text-3xl md:text-4xl text-primary mb-8">Paper Submission</h2>
                   
@@ -166,7 +172,7 @@ const CallForPapers = () => {
                 </div>
               </TabsContent>
 
-              <TabsContent value="tracks" className="space-y-8">
+              <TabsContent value="tracks" id="tracks" className="space-y-8">
                 <div className="text-center mb-12">
                   <h2 className="text-4xl font-bold mb-4">Conference Tracks</h2>
                   <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
@@ -192,7 +198,7 @@ const CallForPapers = () => {
                 </div>
               </TabsContent>
 
-              <TabsContent value="guidelines" className="space-y-8">
+              <TabsContent value="guidelines" id="guidelines" className="space-y-8">
                 <div className="grid lg:grid-cols-2 gap-12">
                   {/* Paper Types */}
                   <div>
@@ -234,7 +240,7 @@ const CallForPapers = () => {
                 </div>
               </TabsContent>
 
-              <TabsContent value="dates" className="space-y-8">
+              <TabsContent value="dates" id="dates" className="space-y-8">
                 <div className="text-center mb-12">
                   <h2 className="text-3xl font-bold mb-4">Important Dates</h2>
                   <p className="text-lg text-muted-foreground">
