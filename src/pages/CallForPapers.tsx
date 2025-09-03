@@ -102,7 +102,7 @@ const CallForPapers = () => {
         <div className="min-h-screen flex flex-col">
       <div className="container mx-auto px-4 py-12 flex-grow">
         <div className="max-w-4xl mx-auto bg-white p-8 rounded-lg shadow-lg">
-          <h1 className=" text-3xl md:text-4xl text-[#001324] mb-8">Paper Submission</h1>
+          <h1 id="paper-submission" className=" text-3xl md:text-4xl text-[#001324] mb-8">Paper Submission</h1>
           
           <p className="text-lg mb-6">
             The Original unpublished Research Papers, Articles & Working papers having maximum length 10-12 pages on the topics related to the theme are invited for presentation/publication in the conference proceedings.
@@ -164,7 +164,7 @@ const CallForPapers = () => {
         </section> */}
 
         {/* Conference Tracks */}
-        <section className="py-16 bg-background">
+        <section id="conference-tracks" className="py-16 bg-background">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <h2 className="text-4xl font-bold mb-4">Conference Tracks</h2>
@@ -193,7 +193,7 @@ const CallForPapers = () => {
         </section>
 
         {/* Paper Types & Guidelines */}
-        <section className="py-16 bg-gradient-subtle">
+        <section id="guidelines" className="py-16 bg-gradient-subtle">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-12">
               {/* Paper Types */}
@@ -238,7 +238,7 @@ const CallForPapers = () => {
         </section>
 
         {/* Important Dates */}
-        <section className="py-16 bg-background">
+        <section id="important-dates" className="py-16 bg-background">
           <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold mb-4">Important Dates</h2>
