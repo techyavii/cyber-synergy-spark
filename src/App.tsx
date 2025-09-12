@@ -45,7 +45,6 @@ const DownPage = () => (
 );
 
 const App = () => {
-  // ✅ check env variable (Vite convention uses import.meta.env)
   if (import.meta.env.VITE_WEBSITE_DOWN === "true") {
     return <DownPage />;
   }
