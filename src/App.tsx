@@ -27,8 +27,8 @@ const DownPage = () => (
     <div className="text-center max-w-lg">
       <h1 className="text-5xl font-bold mb-6">⚠️ Website is Down</h1>
       <p className="text-lg mb-6 text-gray-300">
-        Our website is currently unavailable.  
-        We’re working hard to restore it as soon as possible.
+        Our website is currently unavailable. 
+        We apologize for the inconvenience.
       </p>
       <div className="animate-bounce text-3xl mb-8">🔧</div>
       <p className="text-sm text-gray-400 mb-6">
