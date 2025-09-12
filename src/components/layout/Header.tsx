@@ -1,174 +1,228 @@
-import { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
-import { Button } from "@/components/ui/button";
-import { 
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { Menu, X, ChevronDown } from "lucide-react";
+import React, { useState, useEffect, useRef } from 'react';
+import { Menu, ChevronDown } from 'lucide-react';
+import { Link, useLocation } from 'react-router-dom';
 
-const Header = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+const Navbar: React.FC = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const dropdownRef = useRef<HTMLDivElement>(null);
   const location = useLocation();
 
-  const navigation = [
-    { name: "Home", href: "/" },
-    { name: "About", href: "/about" },
-    { name: "Registration", href: "/registration" },
-    { name: "Publication", href: "/publication" },
-    { name: "Committee", href: "/committee" },
-    { name: "Venue", href: "/venue" },
-    { name: "Downloads", href: "/downloads" },
-    { name: "Policy", href: "/policy" },
-  ];
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 20) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
 
-  const callForPapersItems = [
-    { name: "Paper Submission", href: "/call-for-papers#paper-submission" },
-    { name: "Conference Tracks", href: "/call-for-papers#conference-tracks" },
-    { name: "Guidelines", href: "/call-for-papers#guidelines" },
-    { name: "Important Dates", href: "/call-for-papers#important-dates" },
-  ];
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
-  const isActive = (path: string) => location.pathname === path;
+  // Scroll to top when route changes
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setActiveDropdown(null);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
+  const toggleMobileMenu = () => setMobileMenuOpen(!mobileMenuOpen);
+
+  const toggleDropdown = (name: string) => {
+    setActiveDropdown(activeDropdown === name ? null : name);
+  };
+
+  const navLinks = [
+    { name: 'Home', href: '/' },
+    { name: 'About Us', href: '/about' },
+    { 
+      name: 'Papers', 
+      href: '#papers', 
+      hasDropdown: true,
+      dropdownItems: [
+        { name: 'Call for Papers', href: '/call-for-papers#paper-submission' },
+        { name: "Conference Tracks", href: "/call-for-papers#conference-tracks" },
+        { name: "Guidelines", href: "/call-for-papers#guidelines" }, 
+        { name: "Important Dates", href: "/call-for-papers#important-dates" },
+      ]
+    },
+    { name: 'Committee', href: '/committee' },
+    { name: 'Registration', href: '/registration' },
+    { name: 'Publications', href: '/publication' },
+    { name: 'Conference Venue', href: '/venue' },
+    { name: 'Downloads', href: '/downloads' },
+    { name: 'Privacy Policy', href: '/policy' }
+  ];
 
   return (
-    <header className="bg-card shadow-soft border-b">
-      <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex h-20 justify-between items-center">
-          {/* Logo and Conference Title */}
-          <div className="flex items-center space-x-4">
-            <Link to="/" className="flex items-center space-x-3">
-              <div className="w-12 h-12 gradient-hero rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-xl">S</span>
-              </div>
-              <div>
-                <h1 className="text-xl font-bold text-foreground">SNGC 2026</h1>
-                <p className="text-sm text-muted-foreground">Cardiff, UK</p>
-              </div>
-            </Link>
-          </div>
-
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex lg:space-x-1">
-            {navigation.map((item) => (
-              <Link
-                key={item.name}
-                to={item.href}
-                className={`px-3 py-2 rounded-md text-sm font-medium transition-smooth ${
-                  isActive(item.href)
-                    ? "bg-primary text-primary-foreground"
-                    : "text-foreground hover:bg-secondary hover:text-secondary-foreground"
-                }`}
-              >
-                {item.name}
-              </Link>
-            ))}
-            
-            {/* Call for Papers Dropdown */}
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <Button 
-                  variant="ghost" 
-                  className={`px-3 py-2 text-sm font-medium transition-smooth ${
-                    location.pathname === "/call-for-papers"
-                      ? "bg-primary text-primary-foreground"
-                      : "text-foreground hover:bg-secondary hover:text-secondary-foreground"
-                  }`}
+    <nav 
+      className={`sticky top-0 w-full z-50 transition-all duration-300 border-b border-gray-200 ${
+        isScrolled ? 'shadow-md' : ''
+      }`}
+      style={{ backgroundColor: '#fff' }}
+    >
+      <div className="container mx-auto px-4 flex justify-between items-center h-16">
+        <Link to="/" className="text-xl font-bold font-druk text-black">DASGRI 2026</Link>
+        
+        <div className="hidden lg:flex space-x-2">
+          {navLinks.map((link) => (
+            <div
+              key={link.name}
+              className="relative"
+            >
+              {link.href.startsWith('/') ? (
+                <Link 
+                  to={link.href} 
+                  className="font-graphik font-medium hover:bg-blue-500 hover:text-white transition-colors text-black flex items-center px-3 py-2 text-sm rounded"
+                  onClick={(e) => {
+                    if (link.hasDropdown) {
+                      e.preventDefault();
+                      toggleDropdown(link.name);
+                    }
+                  }}
                 >
-                  Call for Papers
-                  <ChevronDown className="ml-1 h-4 w-4" />
-                </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent align="end" className="w-56">
-                {callForPapersItems.map((item) => (
-                  <DropdownMenuItem key={item.name} asChild>
+                  {link.name}
+                  {link.hasDropdown && <ChevronDown className="ml-1 h-4 w-4" />}
+                </Link>
+              ) : (
+                <a 
+                  href={link.href} 
+                  className="font-graphik font-medium hover:bg-blue-500 hover:text-white transition-colors text-black flex items-center px-3 py-2 text-sm rounded"
+                  onClick={(e) => {
+                    if (link.hasDropdown) {
+                      e.preventDefault();
+                      toggleDropdown(link.name);
+                    }
+                  }}
+                >
+                  {link.name}
+                  {link.hasDropdown && <ChevronDown className="ml-1 h-4 w-4" />}
+                </a>
+              )}
+              
+              {link.hasDropdown && activeDropdown === link.name && link.dropdownItems && (
+                <div 
+                  ref={dropdownRef}
+                  className="absolute top-full left-0 bg-white border border-gray-200 rounded-md shadow-lg mt-1 w-52 py-2 z-50"
+                >
+                  {link.dropdownItems.map((item) => (
                     <Link
+                      key={item.name}
                       to={item.href}
-                      className="w-full cursor-pointer"
+                      className="block px-4 py-2 text-sm hover:bg-blue-500 text-black hover:text-white"
+                      onClick={() => setActiveDropdown(null)}
                     >
                       {item.name}
                     </Link>
-                  </DropdownMenuItem>
-                ))}
-              </DropdownMenuContent>
-            </DropdownMenu>
-          </div>
+                  ))}
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+        
+        <button 
+          className="lg:hidden text-2xl"
+          onClick={toggleMobileMenu}
+          aria-label="Toggle menu"
+        >
+          <Menu className="text-black" />
+        </button>
+      </div>
+      
+      {/* Mobile menu */}
+      {mobileMenuOpen && (
+        <div className="lg:hidden bg-white text-black border-t border-gray-200">
+          <div className="container mx-auto px-4 py-4 flex flex-col space-y-2">
+            {navLinks.map((link) => (
+              <div key={link.name}>
+                {link.href.startsWith('/') ? (
+                  <Link 
+                    to={link.href} 
+                    className="font-graphik font-medium hover:bg-blue-500 hover:text-white transition-colors flex items-center py-2 px-2 rounded"
+                    onClick={(e) => {
+                      if (link.hasDropdown) {
+                        e.preventDefault();
+                        toggleDropdown(link.name);
+                      } else {
+                        setMobileMenuOpen(false);
+                        setActiveDropdown(null);
+                      }
+                    }}
+                  >
+                    {link.name}
+                    {link.hasDropdown && (
+                      <ChevronDown 
+                        className={`ml-1 h-4 w-4 transition-transform ${activeDropdown === link.name ? 'transform rotate-180' : ''}`}
+                      />
+                    )}
+                  </Link>
+                ) : (
+                  <a 
+                    href={link.href} 
+                    className="font-graphik font-medium hover:bg-blue-500 hover:text-white transition-colors flex items-center py-2 px-2 rounded"
+                    onClick={(e) => {
 
-          {/* CTA Buttons */}
-          <div className="hidden md:flex items-center space-x-3">
-            <Button variant="outline" asChild>
-              <Link to="/registration">Register</Link>
-            </Button>
-            <Button asChild className="gradient-hero">
-              <Link to="/call-for-papers">Submit Paper</Link>
-            </Button>
-          </div>
-
-          {/* Mobile menu button */}
-          <div className="lg:hidden">
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              aria-label="Toggle menu"
-            >
-              {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-            </Button>
+                      if (link.hasDropdown) {
+                        e.preventDefault();
+                        toggleDropdown(link.name);
+                      } else {
+                        setMobileMenuOpen(false);
+                        setActiveDropdown(null);
+                      }
+                    }}
+                  >
+                    {link.name}
+                    {link.hasDropdown && (
+                      <ChevronDown 
+                        className={`ml-1 h-4 w-4 transition-transform ${activeDropdown === link.name ? 'transform rotate-180' : ''}`}
+                      />
+                    )}
+                  </a>
+                )}
+                
+                {link.hasDropdown && link.dropdownItems && (
+                  <div className="pl-4 mt-1 border-l-2 border-gray-200 space-y-2">
+                    {link.dropdownItems.map((item) => {
+                      console.log(item)
+                      return(
+                      <Link
+                        key={item.name}
+                        to={item.href}
+                        className="block py-1 px-2 text-sm hover:bg-blue-500 hover:text-white rounded"
+                        onClick={() => {
+                          console.log("ERror")
+                          setTimeout(() => {
+                            setMobileMenuOpen(false);
+                            setActiveDropdown(null);
+                          }, 100)}}
+                      >
+                        {item.name}
+                      </Link>
+                      )})}
+                  </div>
+                )}
+              </div>
+            ))}
           </div>
         </div>
-
-        {/* Mobile Navigation */}
-        {isMenuOpen && (
-          <div className="lg:hidden border-t pt-4 pb-6">
-            <div className="space-y-2">
-              {navigation.map((item) => (
-                <Link
-                  key={item.name}
-                  to={item.href}
-                  className={`block px-3 py-2 rounded-md text-base font-medium transition-smooth ${
-                    isActive(item.href)
-                      ? "bg-primary text-primary-foreground"
-                      : "text-foreground hover:bg-secondary"
-                  }`}
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {item.name}
-                </Link>
-              ))}
-              
-              {/* Mobile Call for Papers Section */}
-              <div className="pt-2">
-                <div className="px-3 py-2 text-sm font-semibold text-muted-foreground">
-                  Call for Papers
-                </div>
-                {callForPapersItems.map((item) => (
-                  <Link
-                    key={item.name}
-                    to={item.href}
-                    className="block px-6 py-2 rounded-md text-sm font-medium text-foreground hover:bg-secondary transition-smooth"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    {item.name}
-                  </Link>
-                ))}
-              </div>
-              
-              <div className="pt-4 space-y-2">
-                <Button variant="outline" className="w-full" asChild>
-                  <Link to="/registration">Register</Link>
-                </Button>
-                <Button className="w-full gradient-hero" asChild>
-                  <Link to="/call-for-papers">Submit Paper</Link>
-                </Button>
-              </div>
-            </div>
-          </div>
-        )}
-      </nav>
-    </header>
+      )}
+    </nav>
   );
 };
 
-export default Header;
+export default Navbar;
