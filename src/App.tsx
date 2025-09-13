@@ -21,34 +21,33 @@ import Downloads from "./pages/Download";
 
 const queryClient = new QueryClient();
 
-// Website Down Page
-const DownPage = () => (
-  <div className="flex items-center justify-center min-h-screen bg-gray-900 text-white px-4">
-    <div className="text-center max-w-lg">
-      <h1 className="text-5xl font-bold mb-6">⚠️ Website is Down</h1>
-      <p className="text-lg mb-6 text-gray-300">
-        Our website is currently unavailable. 
-        We apologize for the inconvenience.
-      </p>
-      <div className="animate-bounce text-3xl mb-8">🔧</div>
-      <p className="text-sm text-gray-400 mb-6">
-        Please check back later or contact us if urgent.
-      </p>
-      <a
-        href="mailto:support@example.com"
-        className="px-6 py-3 rounded-xl bg-red-600 hover:bg-red-500 transition text-white font-medium"
-      >
-        Contact Support
-      </a>
-    </div>
-  </div>
-);
+// // Website Down Page
+// const DownPage = () => (
+//   <div className="flex items-center justify-center min-h-screen bg-gray-900 text-white px-4">
+//     <div className="text-center max-w-lg">
+//       <h1 className="text-5xl font-bold mb-6">⚠️ Website is Down</h1>
+//       <p className="text-lg mb-6 text-gray-300">
+//         Our website is currently unavailable. 
+//         We apologize for the inconvenience.
+//       </p>
+//       <div className="animate-bounce text-3xl mb-8">🔧</div>
+//       <p className="text-sm text-gray-400 mb-6">
+//         Please check back later or contact us if urgent.
+//       </p>
+//       <a
+//         href="mailto:support@example.com"
+//         className="px-6 py-3 rounded-xl bg-red-600 hover:bg-red-500 transition text-white font-medium"
+//       >
+//         Contact Support
+//       </a>
+//     </div>
+//   </div>
+// );
 
 const App = () => {
-  if (import.meta.env.VITE_WEBSITE_DOWN === "true") {
-    return <DownPage />;
-  }
-
+  // if (import.meta.env.VITE_WEBSITE_DOWN === "true") {
+  //   return <DownPage />;
+  // }
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
