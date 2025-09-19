@@ -27,6 +27,7 @@ const Publications = () => {
               className="h-20 md:h-24 w-auto"
             />
             </div> */}
+            {/* commented paper */}
           </div>
         </div>
       </div>
