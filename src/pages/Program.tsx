@@ -2,8 +2,10 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Calendar, Clock, MapPin, Users } from "lucide-react";
+import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import { keynoteSpeakers } from "@/data/keynoteSpeakers";
 
 const Program = () => {
   const scheduleData = [
@@ -218,48 +220,81 @@ const Program = () => {
           {/* Header */}
           <div className="text-center mb-16">
             <Badge variant="secondary" className="mb-4">
-              Conference Program
+              Conference Programme
             </Badge>
             <h1 className="text-4xl font-bold text-foreground mb-6">
-              SNGC 2026 Program Schedule
+              SNGC 2026 Programme
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Three days of cutting-edge research presentations, keynotes, and networking opportunities
+              Discover our distinguished keynote speakers and conference schedule
             </p>
-            <div className="mt-8 text-center">
-              <p className="text-muted-foreground mb-4">
-                <strong>Note:</strong> Schedule is preliminary and subject to change
-              </p>
-              <Button className="gradient-hero">
-                Download Program PDF
-              </Button>
-            </div>
           </div>
 
-          {/* Schedule */}
-          <div className="text-center mb-16">
-            <Card className="border-0 shadow-soft max-w-3xl mx-auto">
-              <CardContent className="p-16">
-                <div className="space-y-8">
-                  <div className="w-32 h-32 bg-muted rounded-full flex items-center justify-center mx-auto">
-                    <Calendar className="w-16 h-16 text-muted-foreground" />
+          {/* Keynote Speakers Section */}
+          <section id="keynote-speakers" className="mb-20">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold mb-4">Keynote Speakers</h2>
+              <p className="text-lg text-muted-foreground">
+                Learn from world-renowned experts in Cyber-Physical Systems
+              </p>
+            </div>
+
+            <div className="space-y-8">
+              {keynoteSpeakers.map((speaker, index) => (
+                <Card key={speaker.id} className="border-border/50 shadow-soft hover:shadow-medium transition-all duration-300">
+                  <CardContent className="p-8">
+                    <div className="flex flex-col md:flex-row gap-6">
+                      <div className="flex-shrink-0">
+                        <Avatar className="w-32 h-32 border-4 border-primary/20">
+                          <AvatarFallback className="bg-primary/10 text-primary font-bold text-3xl">
+                            {speaker.initials}
+                          </AvatarFallback>
+                        </Avatar>
+                      </div>
+                      <div className="flex-grow">
+                        <h3 className="text-2xl font-bold mb-2 text-primary">
+                          {speaker.name}
+                        </h3>
+                        <p className="text-lg text-muted-foreground mb-4 font-semibold">
+                          {speaker.affiliation}
+                        </p>
+                        <p className="text-foreground leading-relaxed text-justify">
+                          {speaker.bio}
+                        </p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </section>
+
+          {/* Conference Programme Section */}
+          <section id="conference-programme" className="mb-16">
+            <div className="text-center mb-16">
+              <Card className="border-0 shadow-soft max-w-3xl mx-auto">
+                <CardContent className="p-16">
+                  <div className="space-y-8">
+                    <div className="w-32 h-32 bg-muted rounded-full flex items-center justify-center mx-auto">
+                      <Calendar className="w-16 h-16 text-muted-foreground" />
+                    </div>
+                    <div>
+                      <h3 className="text-3xl font-bold mb-4">Programme Coming Soon</h3>
+                      <p className="text-xl text-muted-foreground mb-6">
+                        We are currently finalizing the conference programme with exciting keynotes, technical sessions, and networking opportunities.
+                      </p>
+                      <p className="text-lg text-muted-foreground">
+                        The detailed schedule will be published once all speakers and sessions are confirmed. Check back regularly for updates!
+                      </p>
+                    </div>
+                    <Badge variant="secondary" className="text-base px-6 py-2">
+                      Expected Publication: Early 2026
+                    </Badge>
                   </div>
-                  <div>
-                    <h3 className="text-3xl font-bold mb-4">Program Coming Soon</h3>
-                    <p className="text-xl text-muted-foreground mb-6">
-                      We are currently finalizing the conference program with exciting keynotes, technical sessions, and networking opportunities.
-                    </p>
-                    <p className="text-lg text-muted-foreground">
-                      The detailed schedule will be published once all speakers and sessions are confirmed. Check back regularly for updates!
-                    </p>
-                  </div>
-                  <Badge variant="secondary" className="text-base px-6 py-2">
-                    Expected Publication: Early 2026
-                  </Badge>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
+                </CardContent>
+              </Card>
+            </div>
+          </section>
 
           {/* Additional Information */}
           <div className="mt-16 grid md:grid-cols-2 gap-8">

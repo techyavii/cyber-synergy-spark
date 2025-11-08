@@ -150,6 +150,48 @@ const CallForPapers = () => {
       </div>
     </div>
 
+    {/* Special Sessions/Tutorials Section */}
+    <section id="special-sessions" className="py-16 bg-gradient-subtle">
+      <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+        <div className="text-center">
+          <h2 className="text-3xl font-bold mb-6">Call for Special Sessions/Tutorials</h2>
+          <Card className="border-0 shadow-soft">
+            <CardContent className="p-12">
+              <p className="text-xl text-muted-foreground">Information will be provided soon</p>
+            </CardContent>
+          </Card>
+        </div>
+      </div>
+    </section>
+
+    {/* Industry Sessions Section */}
+    <section id="industry-sessions" className="py-16 bg-background">
+      <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+        <div className="text-center">
+          <h2 className="text-3xl font-bold mb-6">Call for Industry Sessions</h2>
+          <Card className="border-0 shadow-soft">
+            <CardContent className="p-12">
+              <p className="text-xl text-muted-foreground">Information will be provided soon</p>
+            </CardContent>
+          </Card>
+        </div>
+      </div>
+    </section>
+
+    {/* Panel Discussions Section */}
+    <section id="panel-discussions" className="py-16 bg-gradient-subtle">
+      <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+        <div className="text-center">
+          <h2 className="text-3xl font-bold mb-6">Call for Panel Discussions</h2>
+          <Card className="border-0 shadow-soft">
+            <CardContent className="p-12">
+              <p className="text-xl text-muted-foreground">Information will be provided soon</p>
+            </CardContent>
+          </Card>
+        </div>
+      </div>
+    </section>
+
         {/* Important Alert */}
         {/* <section className="py-8 bg-background">
           <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">

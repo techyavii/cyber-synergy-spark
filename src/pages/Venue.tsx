@@ -40,7 +40,7 @@ const ConferenceVenue = () => {
       <Header/>
       <div className="container mx-auto px-4 py-8 flex-grow">
         <div className="max-w-6xl mx-auto">
-          <h1 className="text-4xl font-bold mb-8 text-center text-blue-600">VENUE</h1>
+          <h1 className="text-4xl font-bold mb-8 text-center text-blue-600">VENUE AND TRAVEL</h1>
           
           {/* Main venue section */}
           <div className="grid md:grid-cols-2 gap-8 mb-12">
@@ -57,26 +57,18 @@ const ConferenceVenue = () => {
             </div>
 
             <div className="bg-white p-6 rounded-lg shadow-md flex flex-col justify-center">
-              <h2 className="text-3xl font-semibold mb-4 text-blue-600">LEONARDO HOTEL CARDIFF</h2>
-              <div className="flex items-start gap-3 mb-3">
-                <Building className="mt-1 flex-shrink-0" size={20} />
-                <p>Our conference will be hosted at the Leonardo Hotel Cardiff (or Hilton Cardiff - TBC), conveniently located at the heart of city centre, offering easy access to Cardiff's top attractions, restaurants, and cultural landmarks.</p>
-              </div>
+              <h2 className="text-3xl font-semibold mb-4 text-blue-600">CONFERENCE VENUE</h2>
+              <h3 className="text-2xl font-semibold mb-4">Cardiff Metropolitan University</h3>
               <div className="flex items-start gap-3 mb-3">
                 <MapPin className="mt-1 flex-shrink-0" size={20} />
-                <p>Cardiff City Centre, Wales, United Kingdom</p>
+                <p>Llandaff Campus, Western Avenue, Cardiff, CF5 2YB</p>
               </div>
               <div className="flex items-start gap-3 mb-3">
-                <Mail className="mt-1 flex-shrink-0" size={20} />
-                <p>We have secured discounted room rates for conference participants. Please contact the conference team at{' '}
-                  <a href="mailto:dasgri.congress@gmail.com" className="text-blue-600 hover:underline">
-                    dasgri.congress@gmail.com
-                  </a>{' '}
-                  for the discount code.
-                </p>
+                <Building className="mt-1 flex-shrink-0" size={20} />
+                <p className="text-justify">The conference will be held at the Llandaff Campus of Cardiff Metropolitan University, located just minutes from Cardiff city centre. The venue offers a vibrant academic setting with modern facilities, excellent transport links, and easy access to the city's rich cultural and historical attractions.</p>
               </div>
               <a 
-                href="https://maps.google.com/?q=Leonardo+Hotel+Cardiff" 
+                href="https://maps.google.com/?q=Cardiff+Metropolitan+University+Llandaff+Campus" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="inline-flex items-center text-blue-600 hover:underline mt-2"
@@ -87,7 +79,32 @@ const ConferenceVenue = () => {
             </div>
           </div>
 
-          {/* Location section */}
+          {/* Cardiff Welcome Section */}
+          <div className="bg-white p-8 rounded-lg shadow-md mb-12">
+            <h2 className="text-3xl font-semibold mb-6 text-center text-blue-600">WELCOME TO CARDIFF - A HISTORIC AND VIBRANT CONFERENCE DESTINATION</h2>
+            
+            <p className="mb-6 text-justify">
+              Cardiff is the capital and largest city of Wales known for its rich history, culture, and legendary tales. Nestled in the heart of South Wales, the city seamlessly blends its Roman origins, medieval heritage, and modern innovation. At its centre stands the iconic Cardiff Castle, dating back to AD 55, offering a glimpse into nearly 2,000 years of history. Cardiff is also celebrated as the birthplace of Roald Dahl, boasts stunning green spaces like Bute Park, and is home to charming Victorian and Edwardian arcades, filled with boutique shops and independent cafés.
+            </p>
+
+            <p className="mb-6 text-justify">
+              We are delighted to welcome the research community to our vibrant and welcoming capital. Whether you're here for the conference or plan to extend your stay, Cardiff offers plenty to explore—from its bustling waterfront at Cardiff Bay to the rugged coastlines and golden beaches of South and West Wales.
+            </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {cardiffImages.map((image, index) => (
+                <div key={index} className="bg-black p-2 rounded-lg">
+                  <img 
+                    src={image.src} 
+                    alt={image.alt} 
+                    className="w-full h-48 object-cover rounded"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Location and Map section */}
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             <div className="bg-white p-6 rounded-lg shadow-md">
               <h2 className="text-3xl font-semibold mb-4 text-blue-600">LOCATION</h2>
@@ -112,9 +129,9 @@ const ConferenceVenue = () => {
             </div>
           </div>
 
-          {/* Visa section */}
+          {/* Travel and Visa section */}
           <div className="bg-white p-8 rounded-lg shadow-md mb-8">
-            <h2 className="text-3xl font-semibold mb-6 text-center text-blue-600">VISA</h2>
+            <h2 className="text-3xl font-semibold mb-6 text-center text-blue-600">TRAVEL AND VISA</h2>
             
             <p className="mb-6 text-justify">
               If you are a citizen of one of the below 27 countries, then you do not require a visa or any other documentation apart from a passport:
@@ -142,27 +159,6 @@ const ConferenceVenue = () => {
                 <li>Visa Support Letters will be issued only after you have successfully registered and paid for your conference.</li>
                 <li>Visa Support Letters can only be issued for the person registered to attend the conference in form of participant, author, chair and speaker. Unfortunately we cannot issue visa Support Letters for guests of participants.</li>
               </ul>
-            </div>
-          </div>
-
-          {/* Cardiff section */}
-          <div className="bg-white p-8 rounded-lg shadow-md">
-            <h2 className="text-3xl font-semibold mb-6 text-center text-blue-600">CARDIFF</h2>
-            
-            <p className="mb-6 text-justify">
-              Cardiff is the capital and largest city of Wales, known for its rich history, vibrant culture, and stunning architecture. The city seamlessly blends medieval heritage with modern attractions, featuring the iconic Cardiff Castle, the Wales Millennium Centre, and Cardiff Bay. As a major cultural and economic hub, Cardiff offers excellent dining, shopping, and entertainment options, making it an ideal destination for conference attendees to explore Welsh culture and hospitality.
-            </p>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {cardiffImages.map((image, index) => (
-                <div key={index} className="bg-black p-2 rounded-lg">
-                  <img 
-                    src={image.src} 
-                    alt={image.alt} 
-                    className="w-full h-48 object-cover rounded"
-                  />
-                </div>
-              ))}
             </div>
           </div>
         </div>

@@ -48,22 +48,32 @@ const Navbar: React.FC = () => {
 
   const navLinks = [
     { name: 'Home', href: '/' },
-    { name: 'About Us', href: '/about' },
+    { name: 'About', href: '/about' },
     { 
-      name: 'Papers', 
-      href: '#papers', 
+      name: 'Authors', 
+      href: '#authors', 
       hasDropdown: true,
       dropdownItems: [
         { name: 'Call for Papers', href: '/call-for-papers#paper-submission' },
-        { name: "Conference Tracks", href: "/call-for-papers#conference-tracks" },
-        { name: "Guidelines", href: "/call-for-papers#guidelines" }, 
-        { name: "Important Dates", href: "/call-for-papers#important-dates" },
+        { name: 'Call for Special Sessions/Tutorials', href: '/call-for-papers#special-sessions' },
+        { name: 'Call for Industry Sessions', href: '/call-for-papers#industry-sessions' },
+        { name: 'Call for Panel Discussions', href: '/call-for-papers#panel-discussions' },
+        { name: 'Important Dates', href: '/call-for-papers#important-dates' },
       ]
     },
     { name: 'Committee', href: '/committee' },
     { name: 'Registration', href: '/registration' },
     { name: 'Publications', href: '/publication' },
-    { name: 'Conference Venue', href: '/venue' },
+    { 
+      name: 'Conference Programme', 
+      href: '#programme', 
+      hasDropdown: true,
+      dropdownItems: [
+        { name: 'Keynote Speakers', href: '/program#keynote-speakers' },
+        { name: 'Conference Programme', href: '/program#conference-programme' },
+      ]
+    },
+    { name: 'Venue and Travel', href: '/venue' },
     { name: 'Downloads', href: '/downloads' },
     { name: 'Privacy Policy', href: '/policy' }
   ];

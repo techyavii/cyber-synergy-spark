@@ -22,23 +22,28 @@ const Registration: React.FC = () => {
                 <thead>
                   <tr className="bg-[#f9f5e9]">
                     <th className="border border-gray-300 px-4 py-2 text-left">Category</th>
-                    <th className="border border-gray-300 px-4 py-2 text-left">EARLY REGISTRATION (Before 30th June 2026)</th>
-                    <th className="border border-gray-300 px-4 py-2 text-left">LATE REGISTRATION (After 30th June 2026)</th>
+                    <th className="border border-gray-300 px-4 py-2 text-left">Early Registration (Before 30th June 2026)</th>
+                    <th className="border border-gray-300 px-4 py-2 text-left">Late Registration (After 30th June 2026)</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td className="border border-gray-300 px-4 py-2">Physical Registration</td>
+                    <td className="border border-gray-300 px-4 py-2">Standard Authors (Physical mode)</td>
                     <td className="border border-gray-300 px-4 py-2">GBP £500</td>
                     <td className="border border-gray-300 px-4 py-2">GBP £580</td>
                   </tr>
                   <tr className="bg-[#f9f5e9]/50">
-                    <td className="border border-gray-300 px-4 py-2">Online Registration</td>
+                    <td className="border border-gray-300 px-4 py-2">Standard Authors (Online mode)</td>
                     <td className="border border-gray-300 px-4 py-2">GBP £300</td>
                     <td className="border border-gray-300 px-4 py-2">GBP £350</td>
                   </tr>
                   <tr>
-                    <td className="border border-gray-300 px-4 py-2">Student Registration Fee</td>
+                    <td className="border border-gray-300 px-4 py-2">Student Registration (Physical mode)</td>
+                    <td className="border border-gray-300 px-4 py-2">TBC</td>
+                    <td className="border border-gray-300 px-4 py-2">TBC</td>
+                  </tr>
+                  <tr className="bg-[#f9f5e9]/50">
+                    <td className="border border-gray-300 px-4 py-2">Student Registration (Online mode)</td>
                     <td className="border border-gray-300 px-4 py-2">TBC</td>
                     <td className="border border-gray-300 px-4 py-2">TBC</td>
                   </tr>
@@ -46,6 +51,7 @@ const Registration: React.FC = () => {
               </table>
             </div>
             <div className="mt-4 text-sm text-gray-600">
+              <p className="text-justify mb-2">Registration link to be included here soon</p>
               <p className="text-justify">*Standard Paper size – 6 pages. Over length of paper charges £30 per extra page.</p>
               <p className="text-justify">If you have any concerns regarding the registration policy or fees please feel free to write us at <a href="mailto:info@sngc-conf.co.uk" className="text-blue-600 hover:underline">info@sngc-conf.co.uk</a>.</p>
             </div>
@@ -97,10 +103,12 @@ const Registration: React.FC = () => {
               <li className="text-justify">Conference lunch and refreshment*</li>
               <li className="text-justify">Tea and Coffee Breaks*</li>
               <li className="text-justify">Conference kit*</li>
+              <li className="text-justify">Gala Dinner*</li>
               <li className="text-justify">Participation Certificate</li>
             </ul>
             <div className="mt-4 text-sm text-gray-600">
-              <p className="font-bold">Note:</p>
+              <p className="font-bold">* Physical mode registration only</p>
+              <p className="mt-2 font-bold">Note:</p>
               <p className="text-justify">The conference is non-residential and delegates are kindly requested to make their own arrangement for accommodation. If you have any query, please drop a mail to <a href="mailto:info@sngc-conf.co.uk" className="text-blue-600 hover:underline">info@sngc-conf.co.uk</a>. All participants and authors abide by the organization's guidelines.</p>
             </div>
           </section>

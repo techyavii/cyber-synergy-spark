@@ -7,6 +7,7 @@ import ConferenceInfoCard from "@/components/sections/ConferenceInfoCard";
 import AboutSection from "@/components/sections/AboutSection";
 import CTASection from "@/components/sections/CTASection";
 import ImportantDates from "@/components/sections/ImportantDates";
+import KeynoteSpeakers from "@/components/sections/KeynoteSpeakers";
 
 const Index = () => {
   return (
@@ -22,6 +23,7 @@ const Index = () => {
       <ScrollingMarquee />
 
         <AboutSection />
+        <KeynoteSpeakers />
         <ImportantDates />
         {/* <CTASection /> */}
       </main>

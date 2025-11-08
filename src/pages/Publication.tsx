@@ -8,12 +8,13 @@ const Publications = () => {
       <Header />
       <div className="container mx-auto px-4 py-8 flex-grow">
         <div className="max-w-3xl mx-auto">
-          <h1 className="text-3xl font-bold mb-6 font-publico">Publications</h1>
+          <h1 className="text-3xl font-bold mb-6 font-publico">Publication</h1>
           <div className="bg-white p-6 rounded-lg shadow-md">
             <p className="mb-6">
-              Accepted papers will feature in SNGC 2026 Proceedings published IEEE Xplore®.
-                Authors will also have the option to submit the extended versions of conference
-                papers in special issues of selected IEEE journals (TBC).
+              All accepted papers will feature in SNGC 2026 Proceedings and will be submitted for possible inclusion in IEEE Xplore.
+            </p>
+            <p className="mb-6">
+              Authors will also have the opportunity to submit extended versions of their papers to special issues of leading IEEE journals (to be announced soon).
             </p>
             <div className="flex justify-center gap-10">
                <img 

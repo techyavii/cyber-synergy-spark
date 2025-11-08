@@ -21,26 +21,26 @@ export default function AboutSection() {
             
             <div className="space-y-8 text-lg leading-relaxed">
               <div className="p-6 bg-gradient-subtle rounded-2xl border border-border/30">
-                <p className="text-foreground font-medium">
-                  SNGC 2026 is the inaugural event of a new international conference series 
-                  dedicated to advancing research at the intersection of sensing, control, and 
-                  computation in Cyber-Physical Systems (CPS).
+                <p className="text-foreground">
+                  Cyber-Physical Systems (CPS) are driving global digital transformation across sectors such as healthcare, manufacturing, transportation, and smart cities. With the rapid convergence of AI, 5G/6G, IoT, and intelligent sensing technologies, CPS are becoming increasingly interconnected, autonomous, and adaptive.
                 </p>
               </div>
               
               <div className="p-6 bg-gradient-to-r from-accent/5 to-primary/5 rounded-2xl border border-border/30">
                 <p className="text-foreground">
-                  This hybrid event will provide an interdisciplinary platform for researchers, 
-                  industry professionals, and practitioners to foster innovation in smart environments, 
-                  autonomous systems, healthcare, advanced manufacturing, and next-generation 
-                  communication networks.
+                  The SNGC conference series is a new IEEE-supported initiative aimed at advancing and disseminating cutting-edge research and innovations in this rapidly evolving field. The inaugural edition will focus on bridging and advancing research at the intersection of sensing, control, and computation in cyber-physical systems to enable next-generation intelligent, secure, and resilient infrastructures.
+                </p>
+              </div>
+              
+              <div className="p-6 bg-gradient-to-r from-primary/5 to-accent/5 rounded-2xl border border-border/30">
+                <p className="text-foreground">
+                  This hybrid event will provide an interdisciplinary platform for researchers, industry professionals, and practitioners to foster innovation in smart environments, autonomous systems, healthcare, advanced manufacturing, and next-generation communication networks.
                 </p>
               </div>
               
               <div className="p-6 bg-gradient-primary/10 rounded-2xl border border-primary/20">
                 <p className="font-bold text-foreground text-xl">
-                  All accepted papers will be published in IEEE Xplore® Digital Library, 
-                  with options for extended versions in special issues of selected IEEE journals.
+                  Accepted papers will feature in SNGC 2026 Proceedings and will be submitted for possible inclusion in IEEE Xplore. Authors will also have the opportunity to submit extended versions of their papers to special issues of leading IEEE journals (to be announced soon).
                 </p>
               </div>
             </div>
