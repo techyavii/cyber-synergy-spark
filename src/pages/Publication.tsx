@@ -15,7 +15,7 @@ const Publications = () => {
                 Authors will also have the option to submit the extended versions of conference
                 papers in special issues of selected IEEE journals (TBC).
             </p>
-            {/* <div className="flex justify-center gap-10">
+            <div className="flex justify-center gap-10">
                <img 
               src="/ieee-logo.png" 
               alt="IEEE Logo" 
@@ -26,8 +26,7 @@ const Publications = () => {
               alt="IEEE CIS Logo" 
               className="h-20 md:h-24 w-auto"
             />
-            </div> */}
-            {/* commented paper */}
+            </div>
           </div>
         </div>
       </div>
