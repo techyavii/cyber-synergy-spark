@@ -69,8 +69,6 @@ const CallForPapers = () => {
     <div className="min-h-screen">
       <Header />
       <main>
-
-        
         {/* Hero Section */}
         <section className="relative py-20 gradient-hero">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -86,78 +84,126 @@ const CallForPapers = () => {
                 cyber-physical systems, sensing technologies, and intelligent computing.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button size="lg" variant="outline" className="bg-white/10 border-white/30 text-white hover:bg-white/20 backdrop-blur-sm">
+                  <Download className="w-5 h-5 mr-2" />
+                  Download Call for Papers (PDF)
+                </Button>
                 <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
                   <Send className="w-5 h-5 mr-2" />
                   Submit Paper
-                </Button>
-                <Button size="lg" variant="outline" className="bg-white/10 border-white/30 text-white hover:bg-white/20 backdrop-blur-sm">
-                  <Download className="w-5 h-5 mr-2" />
-                  Download Template
                 </Button>
               </div>
             </div>
           </div>
         </section>
 
-        <div className="min-h-screen flex flex-col">
-      <div className="container mx-auto px-4 py-12 flex-grow">
-        <div className="max-w-4xl mx-auto bg-white p-8 rounded-lg shadow-lg">
-          <h1 id="paper-submission" className=" text-3xl md:text-4xl text-[#001324] mb-8">Paper Submission</h1>
-          
-          <p className="text-lg mb-6">
-            The Original unpublished Research Papers, Articles & Working papers having maximum length 10-12 pages on the topics related to the theme are invited for presentation/publication in the conference proceedings.
-          </p>
-          
-          <ol className="list-decimal pl-6 space-y-4">
-            <li className="">
-              Kindly ensure that your paper is formatted as per  IEEE Guidelines (not exceeding 10-12 pages written in A4 size). Please refer the attached springer template for preparation of your paper.
-            </li>
-            <li className="">
-              {/* https://cmt3.research.microsoft.com/DASGRI2026 */}
-              All papers must be submitted online via <Link to={""} className='text-blue-700 underline'>Microsoft CMT Submission Portal</Link>.
-            </li>
-            <li className="">
-              All submissions will be thoroughly peer-reviewed by experts based on originality, significance, and clarity.
-            </li>
-            <li className="">
-              Only papers presenting original content with novel research results or successful innovative applications will be considered for publication in the conference proceedings.
-            </li>
-          </ol>
-          <br/><br/>
-          {/* <p className="">
-            <b>Note: </b>The Microsoft CMT service was used for managing the peer-reviewing process for this conference.
-            This service was provided for free by Microsoft and they bore all expenses, including costs for Azure cloud services as well as for software development and support.
-          </p> */}
-          <h2 className=" text-2xl text-[#001324] mt-10 mb-4">Plagiarism Policy</h2>
-          <ol className="list-decimal pl-6 space-y-4">
-            <li className="">
-              The paper prior to submission should be checked for plagiarism from licensed plagiarism software like Turnitin / iAuthenticate etc. The similarity content should not exceed 15% (in any case either self contents or others). Further, you have to strictly implement the following ethical guidelines for publication:
-            </li>
-            <li className="">
-              Any form of self-plagiarism or plagiarism from others' work(s) should not be there in an article.
-            </li>
-            <li className="">
-              If any model / concept / figure / table / data / conclusive comment by any previously published work is used in your article, you should properly cite a reference to the original work.
-            </li>
-            <li className="">
-              Also language of explaining it should not be same as language of the work from which you have adopted it.
-            </li>
-            <li className="">
-              If you are using any copyrighted material, you should acquire prior permission from the copyright holder.
-            </li>
-          </ol>
-        </div>
-      </div>
-    </div>
+        {/* Call for Papers PDF Section */}
+        <section className="py-16 bg-background">
+          <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+            <Card className="border-0 shadow-soft">
+              <CardContent className="p-6">
+                <div className="flex items-center gap-4 mb-6">
+                  <FileText className="w-8 h-8 text-primary" />
+                  <h2 className="text-2xl font-bold">Call for Papers Document</h2>
+                </div>
+                <div className="bg-muted/50 rounded-lg p-8 text-center">
+                  <p className="text-lg mb-4">Download the detailed Call for Papers document containing complete information about the conference, submission guidelines, and important dates.</p>
+                  <Button size="lg" variant="default" className="gap-2">
+                    <Download className="w-5 h-5" />
+                    Download CFP PDF
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
 
-    {/* Special Sessions/Tutorials Section */}
+        {/* Submission Guidelines Section */}
+        <section className="py-16 bg-background">
+          <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+            <Card className="border-0 shadow-soft">
+              <CardContent className="p-8">
+                <h2 className="text-3xl font-bold mb-6">Paper Submission Guidelines</h2>
+                
+                <div className="space-y-8">
+                  {/* Templates */}
+                  <div className="bg-muted/30 rounded-lg p-6">
+                    <h3 className="text-xl font-semibold mb-4">Paper Templates</h3>
+                    <div className="flex gap-4">
+                      <Button variant="outline" className="gap-2">
+                        <Download className="w-4 h-4" />
+                        IEEE Template (Word)
+                      </Button>
+                      <Button variant="outline" className="gap-2">
+                        <Download className="w-4 h-4" />
+                        IEEE Template (LaTeX)
+                      </Button>
+                    </div>
+                  </div>
+
+                  {/* Submission Process */}
+                  <div>
+                    <h3 className="text-xl font-semibold mb-4">Submission Process</h3>
+                    <ul className="space-y-4">
+                      <li className="flex gap-3">
+                        <CheckCircle className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
+                        <span>Papers must be formatted according to the IEEE conference template (10-12 pages, A4 size)</span>
+                      </li>
+                      <li className="flex gap-3">
+                        <CheckCircle className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
+                        <span>Submit your paper through the Microsoft CMT Portal (link will be provided soon)</span>
+                      </li>
+                      <li className="flex gap-3">
+                        <CheckCircle className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
+                        <span>All submissions will undergo a thorough peer review process</span>
+                      </li>
+                      <li className="flex gap-3">
+                        <CheckCircle className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
+                        <span>Only original papers with novel research results will be considered</span>
+                      </li>
+                    </ul>
+                  </div>
+
+                  {/* Plagiarism Policy */}
+                  <div>
+                    <h3 className="text-xl font-semibold mb-4">Plagiarism Policy</h3>
+                    <Alert className="bg-muted">
+                      <AlertDescription>
+                        Papers must be checked for plagiarism using licensed software (e.g., Turnitin, iAuthenticate). 
+                        Similarity content must not exceed 15%.
+                      </AlertDescription>
+                    </Alert>
+                    <ul className="mt-4 space-y-4">
+                      <li className="flex gap-3">
+                        <AlertCircle className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
+                        <span>No form of self-plagiarism or plagiarism from others' work is permitted</span>
+                      </li>
+                      <li className="flex gap-3">
+                        <AlertCircle className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
+                        <span>Proper citations must be provided for any referenced work</span>
+                      </li>
+                      <li className="flex gap-3">
+                        <AlertCircle className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
+                        <span>Permission must be obtained for any copyrighted material</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </section>    {/* Special Sessions/Tutorials Section */}
     <section id="special-sessions" className="py-16 bg-gradient-subtle">
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
         <div className="text-center">
-          <h2 className="text-3xl font-bold mb-6">Call for Special Sessions/Tutorials</h2>
+          <h2 className="text-3xl font-bold mb-4">Call for Special Sessions/Tutorials</h2>
+          <p className="text-lg text-muted-foreground mb-6">Details about special sessions and tutorials will be announced shortly</p>
           <Card className="border-0 shadow-soft">
-            <CardContent className="p-12">
-              <p className="text-xl text-muted-foreground">Information will be provided soon</p>
+            <CardContent className="p-8">
+              <div className="flex flex-col items-center gap-4">
+                <Calendar className="w-12 h-12 text-muted-foreground/50" />
+                <p className="text-muted-foreground">Check back soon for information about organizing and participating in special sessions and tutorials.</p>
+              </div>
             </CardContent>
           </Card>
         </div>
@@ -168,10 +214,14 @@ const CallForPapers = () => {
     <section id="industry-sessions" className="py-16 bg-background">
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
         <div className="text-center">
-          <h2 className="text-3xl font-bold mb-6">Call for Industry Sessions</h2>
+          <h2 className="text-3xl font-bold mb-4">Call for Industry Sessions</h2>
+          <p className="text-lg text-muted-foreground mb-6">Information about industry sessions will be announced soon</p>
           <Card className="border-0 shadow-soft">
-            <CardContent className="p-12">
-              <p className="text-xl text-muted-foreground">Information will be provided soon</p>
+            <CardContent className="p-8">
+              <div className="flex flex-col items-center gap-4">
+                <Users className="w-12 h-12 text-muted-foreground/50" />
+                <p className="text-muted-foreground">Details about industry participation and session organization will be provided shortly.</p>
+              </div>
             </CardContent>
           </Card>
         </div>
@@ -182,28 +232,19 @@ const CallForPapers = () => {
     <section id="panel-discussions" className="py-16 bg-gradient-subtle">
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
         <div className="text-center">
-          <h2 className="text-3xl font-bold mb-6">Call for Panel Discussions</h2>
+          <h2 className="text-3xl font-bold mb-4">Call for Panel Discussions</h2>
+          <p className="text-lg text-muted-foreground mb-6">Panel discussion details will be announced soon</p>
           <Card className="border-0 shadow-soft">
-            <CardContent className="p-12">
-              <p className="text-xl text-muted-foreground">Information will be provided soon</p>
+            <CardContent className="p-8">
+              <div className="flex flex-col items-center gap-4">
+                <Users className="w-12 h-12 text-muted-foreground/50" />
+                <p className="text-muted-foreground">Information about panel topics and participation will be available soon.</p>
+              </div>
             </CardContent>
           </Card>
         </div>
       </div>
     </section>
-
-        {/* Important Alert */}
-        {/* <section className="py-8 bg-background">
-          <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-            <Alert className="border-accent bg-accent-light">
-              <AlertCircle className="h-4 w-4" />
-              <AlertDescription className="text-accent-foreground">
-                <strong>Paper Submission Deadline: March 27, 2026</strong> - All submissions must be received by this date. 
-                Late submissions will not be considered.
-              </AlertDescription>
-            </Alert>
-          </div>
-        </section> */}
 
         {/* Conference Tracks */}
         <section id="conference-tracks" className="py-16 bg-background">

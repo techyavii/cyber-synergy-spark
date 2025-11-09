@@ -1,48 +1,56 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 const KeynoteSpeakers = () => {
   const speakers = [
     {
       name: "Prof. Carlos A Coello",
       affiliation: "Center for Research and Advanced Studies of the National Polytechnic Institute, Mexico",
-      initials: "CC"
+      initials: "CC",
+      image: "/Speakers/Carlos.jpg"
     },
     {
       name: "Prof. Houbing Herbert Song",
       affiliation: "University of Maryland, Baltimore County, USA",
-      initials: "HS"
+      initials: "HS",
+      image: "/Speakers/Houbing.jpg"
     },
     {
       name: "Prof. Julie McCann",
       affiliation: "Imperial College London, UK",
-      initials: "JM"
+      initials: "JM",
+      image: "/Speakers/Julie.jpg"
     },
     {
       name: "Prof. Paul C. P Chao",
       affiliation: "National Yang Ming Chiao Tung University, Taiwan",
-      initials: "PC"
+      initials: "PC",
+      image: "/Speakers/Paul.jpg"
     },
     {
       name: "Prof. Haiping Du",
       affiliation: "University of Wollongong, Australia",
-      initials: "HD"
+      initials: "HD",
+      image: "/Speakers/Haiping.jpg"
     },
     {
       name: "Prof. Keely Crocket",
       affiliation: "Manchester Metropolitan University, UK",
-      initials: "KC"
+      initials: "KC",
+      image: "/Speakers/Keely.jpg"
     },
     {
       name: "Prof. Flavia Delicato",
       affiliation: "Fluminense Federal University, Brazil",
-      initials: "FD"
+      initials: "FD",
+      image: "/Speakers/Flavia.jpg"
     },
     {
       name: "Prof. Swades De",
       affiliation: "Indian Institute of Technology, Delhi, India",
-      initials: "SD"
+      initials: "SD",
+      image: "/Speakers/Swades.jpg"
     }
   ];
 
@@ -76,6 +84,7 @@ const KeynoteSpeakers = () => {
               <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-accent"></div>
               <CardContent className="p-6 flex flex-col items-center text-center">
                 <Avatar className="w-20 h-20 mb-4 border-2 border-primary/20 group-hover:border-primary/50 transition-colors">
+                  <AvatarImage src={speaker.image} alt={speaker.name} />
                   <AvatarFallback className="bg-primary/10 text-primary font-bold text-lg">
                     {speaker.initials}
                   </AvatarFallback>
