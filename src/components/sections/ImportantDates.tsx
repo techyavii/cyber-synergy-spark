@@ -7,7 +7,7 @@ const ImportantDates = () => {
     {
       icon: FileText,
       title: "Call for Special Sessions",
-      date: "December 30, 2025",
+      date: "January 12, 2026",
       status: "upcoming",
       description: "Submit proposals for special sessions and workshops"
     },
