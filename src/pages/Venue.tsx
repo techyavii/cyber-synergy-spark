@@ -147,10 +147,10 @@ const ConferenceVenue = () => {
 
             <p className="text-justify mb-4 text-sm text-gray-600">
               There are 55 additional countries that do not require a visa, please visit Visitor Supporting Documents for more information. Attendees from countries that require a UK visa for entry are reminded that the process of obtaining a visa may take approximately 3 weeks time under normal circumstances. Please email{' '}
-              <a href="mailto:dasgri.congress@gmail.com" className="text-blue-600 hover:underline">
-                dasgri.congress@gmail.com
+              <a href="mailto:chair.sngc2026@cardiffmet.ac.uk" className="text-blue-600 hover:underline">
+                chair.sngc2026@cardiffmet.ac.uk
               </a>{' '}
-              to request a visa invitation letter so that you can print and use in obtaining a visa. Obtaining a Visa Support Letter from AISGRI-2026 Conference will not guarantee that your U.K. visa application will be approved. The letter is merely supplementary information that explains a visa applicant's intended purpose of travel to United Kingdom
+              to request a visa invitation letter so that you can print and use in obtaining a visa. Obtaining a Visa Support Letter from SNGC 2026 Conference will not guarantee that your U.K. visa application will be approved. The letter is merely supplementary information that explains a visa applicant's intended purpose of travel to United Kingdom
             </p>
 
             <div className="mb-6">

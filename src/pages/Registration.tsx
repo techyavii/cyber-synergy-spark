@@ -29,23 +29,23 @@ const Registration: React.FC = () => {
                 <tbody>
                   <tr>
                     <td className="border border-gray-300 px-4 py-2">Standard Authors (Physical mode)</td>
-                    <td className="border border-gray-300 px-4 py-2">GBP £500</td>
-                    <td className="border border-gray-300 px-4 py-2">GBP £580</td>
+                    <td className="border border-gray-300 px-4 py-2">£500</td>
+                    <td className="border border-gray-300 px-4 py-2">£580</td>
                   </tr>
                   <tr className="bg-[#f9f5e9]/50">
                     <td className="border border-gray-300 px-4 py-2">Standard Authors (Online mode)</td>
-                    <td className="border border-gray-300 px-4 py-2">GBP £300</td>
-                    <td className="border border-gray-300 px-4 py-2">GBP £350</td>
+                    <td className="border border-gray-300 px-4 py-2">£300</td>
+                    <td className="border border-gray-300 px-4 py-2">£350</td>
                   </tr>
                   <tr>
                     <td className="border border-gray-300 px-4 py-2">Student Registration (Physical mode)</td>
-                    <td className="border border-gray-300 px-4 py-2">TBC</td>
-                    <td className="border border-gray-300 px-4 py-2">TBC</td>
+                    <td className="border border-gray-300 px-4 py-2">£375 (25% discount)</td>
+                    <td className="border border-gray-300 px-4 py-2">£435 (25% discount)</td>
                   </tr>
                   <tr className="bg-[#f9f5e9]/50">
                     <td className="border border-gray-300 px-4 py-2">Student Registration (Online mode)</td>
-                    <td className="border border-gray-300 px-4 py-2">TBC</td>
-                    <td className="border border-gray-300 px-4 py-2">TBC</td>
+                    <td className="border border-gray-300 px-4 py-2">£225 (25% discount)</td>
+                    <td className="border border-gray-300 px-4 py-2">£262.50 (25% discount)</td>
                   </tr>
                 </tbody>
               </table>
@@ -53,7 +53,7 @@ const Registration: React.FC = () => {
             <div className="mt-4 text-sm text-gray-600">
               <p className="text-justify mb-2">Registration link to be included here soon</p>
               <p className="text-justify">*Standard Paper size – 6 pages. Over length of paper charges £30 per extra page.</p>
-              <p className="text-justify">If you have any concerns regarding the registration policy or fees please feel free to write us at <a href="mailto:info@sngc-conf.co.uk" className="text-blue-600 hover:underline">info@sngc-conf.co.uk</a>.</p>
+              <p className="text-justify">If you have any concerns regarding the registration policy or fees please feel free to write us at <a href="mailto:chair.sngc2026@cardiffmet.ac.uk" className="text-blue-600 hover:underline">chair.sngc2026@cardiffmet.ac.uk</a>.</p>
             </div>
           </section>
           
@@ -109,7 +109,7 @@ const Registration: React.FC = () => {
             <div className="mt-4 text-sm text-gray-600">
               <p className="font-bold">* Physical mode registration only</p>
               <p className="mt-2 font-bold">Note:</p>
-              <p className="text-justify">The conference is non-residential and delegates are kindly requested to make their own arrangement for accommodation. If you have any query, please drop a mail to <a href="mailto:info@sngc-conf.co.uk" className="text-blue-600 hover:underline">info@sngc-conf.co.uk</a>. All participants and authors abide by the organization's guidelines.</p>
+              <p className="text-justify">The conference is non-residential and delegates are kindly requested to make their own arrangement for accommodation. If you have any query, please drop a mail to <a href="mailto:chair.sngc2026@cardiffmet.ac.uk" className="text-blue-600 hover:underline">chair.sngc2026@cardiffmet.ac.uk</a>. All participants and authors abide by the organization's guidelines.</p>
             </div>
           </section>
         </div>

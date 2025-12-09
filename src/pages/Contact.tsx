@@ -25,7 +25,7 @@ const Contact = () => {
       category: "General Inquiries",
       icon: <Mail className="w-5 h-5" />,
       details: [
-        { label: "Email", value: "info@sngc-conf.co.uk" },
+        { label: "Email", value: "chair.sngc2026@cardiffmet.ac.uk" },
         { label: "Response Time", value: "Within 48 hours" }
       ]
     },
@@ -33,7 +33,7 @@ const Contact = () => {
       category: "Technical Programme",
       icon: <FileText className="w-5 h-5" />,
       details: [
-        { label: "Email", value: "technical@sngc-conf.co.uk" },
+        { label: "Email", value: "chair.sngc2026@cardiffmet.ac.uk" },
         { label: "Chair", value: "Prof. Keeley Crockett" }
       ]
     },
@@ -41,7 +41,7 @@ const Contact = () => {
       category: "Registration & Payment",
       icon: <CreditCard className="w-5 h-5" />,
       details: [
-        { label: "Email", value: "registration@sngc-conf.co.uk" },
+        { label: "Email", value: "chair.sngc2026@cardiffmet.ac.uk" },
         { label: "Phone", value: "+44 (0) 29 2041 6070" }
       ]
     },
@@ -49,7 +49,7 @@ const Contact = () => {
       category: "Venue & Accommodation",
       icon: <MapPin className="w-5 h-5" />,
       details: [
-        { label: "Email", value: "venue@sngc-conf.co.uk" },
+        { label: "Email", value: "chair.sngc2026@cardiffmet.ac.uk" },
         { label: "Location", value: "Cardiff, UK" }
       ]
     }
@@ -279,7 +279,7 @@ const Contact = () => {
                     </div>
                     <div className="flex items-center space-x-2 text-sm">
                       <Mail className="w-4 h-4 text-muted-foreground" />
-                      <span>info@sngc-conf.co.uk</span>
+                      <span>chair.sngc2026@cardiffmet.ac.uk</span>
                     </div>
                   </div>
                 </CardContent>

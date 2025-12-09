@@ -110,6 +110,14 @@ const Committee = () => {
     }
   ];
 
+  const awardsChairs = [
+    {
+      name: "Prof. Shiyan Yu",
+      affiliation: "University of Hong Kong, Hong Kong",
+      role: "Awards Chair"
+    }
+  ];
+
   const technicalCommittee = [
     { name: "Prof. Valentina Emilia Balas", affiliation: "Aurel Vlaicu University of Arad, Romania" },
     { name: "Prof. Marius Balas", affiliation: "Aurel Vlaicu University of Arad, Romania" },
@@ -251,6 +259,12 @@ const Committee = () => {
             members={publicityChairs}
           />
 
+          <CommitteeSection 
+            title="Awards Chair" 
+            members={awardsChairs}
+            icon={Award}
+          />
+
           {/* Technical Programme Committee */}
           <div className="mb-16">
             <h2 className="text-2xl font-bold text-center mb-8 flex items-center justify-center space-x-2">
@@ -284,11 +298,7 @@ const Committee = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <div className="flex items-center space-x-2 text-sm text-muted-foreground">
                 <Mail className="w-4 h-4" />
-                <span>General Inquiries: info@sngc-conf.co.uk</span>
-              </div>
-              <div className="flex items-center space-x-2 text-sm text-muted-foreground">
-                <Globe className="w-4 h-4" />
-                <span>Technical Queries: technical@sngc-conf.co.uk</span>
+                <span>General Inquiries: chair.sngc2026@cardiffmet.ac.uk</span>
               </div>
             </div>
           </div>
